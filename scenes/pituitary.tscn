@@ -4,6 +4,11 @@
 
 [node name="Node2D" type="Node2D" unique_id=181875309]
 
+[node name="ImageRemovebgPreview" type="Sprite2D" parent="." unique_id=2139273411]
+position = Vector2(11, -117)
+scale = Vector2(0.724, 0.724)
+texture = ExtResource("1_jhwi8")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=808609039]
 
 [node name="Control" type="Control" parent="." unique_id=629364995]
@@ -12,7 +17,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="Control" unique_id=1866667170]
+[node name="gh" type="Button" parent="Control" unique_id=1866667170]
 layout_mode = 0
 offset_left = 291.0
 offset_top = 106.0
@@ -22,7 +27,22 @@ scale = Vector2(0.545, 0.545)
 theme_override_font_sizes/font_size = 105
 text = "GH"
 
-[node name="ImageRemovebgPreview" type="Sprite2D" parent="." unique_id=2139273411]
-position = Vector2(11, -117)
-scale = Vector2(0.724, 0.724)
-texture = ExtResource("1_jhwi8")
+[node name="acth" type="Button" parent="Control" unique_id=143898230]
+layout_mode = 0
+offset_left = 295.0
+offset_top = -96.0
+offset_right = 458.0
+offset_bottom = 56.0
+scale = Vector2(0.545, 0.545)
+theme_override_font_sizes/font_size = 105
+text = "ACTH"
+
+[node name="adh" type="Button" parent="Control" unique_id=2073041327]
+layout_mode = 0
+offset_left = 299.00003
+offset_top = 9.0
+offset_right = 581.0
+offset_bottom = 161.0
+scale = Vector2(0.545, 0.545)
+theme_override_font_sizes/font_size = 105
+text = "ADH"

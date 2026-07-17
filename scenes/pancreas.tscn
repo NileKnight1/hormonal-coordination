@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://4agiv0bp4wdw"]
 
 [ext_resource type="Texture2D" uid="uid://bnt7qqmfkoo10" path="res://assets/2864303.png" id="1_0pd53"]
-[ext_resource type="Script" uid="uid://w0jiuqgea12" path="res://scenes/pancreas.gd" id="1_c3nsg"]
+[ext_resource type="Script" uid="uid://w0jiuqgea12" path="res://scripts/pancreas.gd" id="1_c3nsg"]
 
 [node name="Node2D" type="Node2D" unique_id=457058763]
 script = ExtResource("1_c3nsg")
@@ -17,12 +17,24 @@ texture = ExtResource("1_0pd53")
 layout_mode = 3
 anchors_preset = 0
 
+[node name="status" type="Label" parent="Node" unique_id=1936103788]
+layout_mode = 0
+offset_left = -493.0
+offset_top = 209.0
+offset_right = 134.0
+offset_bottom = 316.0
+scale = Vector2(0.57, 0.57)
+theme_override_font_sizes/font_size = 78
+text = "Player is nothing"
+
 [node name="insulin" type="Button" parent="Node" unique_id=1269174935]
 layout_mode = 0
 offset_left = 272.0
 offset_top = 47.0
 offset_right = 322.0
 offset_bottom = 97.0
+scale = Vector2(0.505, 0.505)
+theme_override_font_sizes/font_size = 127
 text = "Insulin"
 
 [node name="glucagon" type="Button" parent="Node" unique_id=1664811586]
@@ -31,6 +43,8 @@ offset_left = 274.0
 offset_top = 157.0
 offset_right = 355.0
 offset_bottom = 207.0
+scale = Vector2(0.48, 0.48)
+theme_override_font_sizes/font_size = 112
 text = "Glucagon"
 
 [node name="glucose_level" type="Label" parent="Node" unique_id=1744235648]
@@ -41,7 +55,7 @@ offset_right = -319.0
 offset_bottom = -239.0
 scale = Vector2(0.545, 0.545)
 theme_override_font_sizes/font_size = 72
-text = "Glucose level: 90"
+text = "Glucose level: 85"
 
 [connection signal="button_down" from="Node/insulin" to="." method="_on_insulin_button_down"]
 [connection signal="button_down" from="Node/glucagon" to="." method="_on_glucagon_button_down"]
