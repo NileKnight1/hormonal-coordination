@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cq43y62el81ft"]
 
+[ext_resource type="Script" uid="uid://vc1sp7e4l4kc" path="res://scripts/thyroid.gd" id="1_5o43r"]
 [ext_resource type="Texture2D" uid="uid://dwth37kpviqy4" path="res://assets/6-parathyroid-gland-scaled-e1587283480126-removebg-preview.png" id="1_n8mbt"]
 
 [node name="Node2D" type="Node2D" unique_id=1121657011]
+script = ExtResource("1_5o43r")
 
 [node name="6ParathyroidGlandScaledE1587283480126RemovebgPreview" type="Sprite2D" parent="." unique_id=542691179]
 position = Vector2(-3.0000153, -76)
@@ -37,7 +39,7 @@ scale = Vector2(0.475, 0.475)
 theme_override_font_sizes/font_size = 112
 text = "Parathormone"
 
-[node name="Label" type="Label" parent="Control" unique_id=1658676497]
+[node name="calcium_level" type="Label" parent="Control" unique_id=1658676497]
 layout_mode = 0
 offset_left = -544.99994
 offset_top = -273.0
@@ -46,3 +48,16 @@ offset_bottom = -124.0
 scale = Vector2(0.525, 0.525)
 theme_override_font_sizes/font_size = 109
 text = "Blood Ca⁺²: 9mg/dL"
+
+[node name="status" type="Label" parent="Control" unique_id=755735251]
+layout_mode = 0
+offset_left = -511.0
+offset_top = 173.0
+offset_right = 637.0
+offset_bottom = 362.0
+scale = Vector2(0.535, 0.535)
+theme_override_font_sizes/font_size = 118
+text = "Player is nothing."
+
+[connection signal="button_down" from="Control/calcitonin" to="." method="_on_calcitonin_button_down"]
+[connection signal="button_down" from="Control/parathormone" to="." method="_on_parathormone_button_down"]
