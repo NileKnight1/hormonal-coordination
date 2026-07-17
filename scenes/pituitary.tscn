@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bn12jmah6tb8y"]
+
+[ext_resource type="Texture2D" uid="uid://tre3o8rwhrp" path="res://assets/image-removebg-preview.png" id="1_jhwi8"]
+
+[node name="Node2D" type="Node2D" unique_id=181875309]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=808609039]
+
+[node name="Control" type="Control" parent="." unique_id=629364995]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control" unique_id=1866667170]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 106.0
+offset_right = 454.0
+offset_bottom = 258.0
+scale = Vector2(0.545, 0.545)
+theme_override_font_sizes/font_size = 105
+text = "GH"
+
+[node name="ImageRemovebgPreview" type="Sprite2D" parent="." unique_id=2139273411]
+position = Vector2(11, -117)
+scale = Vector2(0.724, 0.724)
+texture = ExtResource("1_jhwi8")

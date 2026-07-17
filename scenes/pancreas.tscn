@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://4agiv0bp4wdw"]
+
+[ext_resource type="Texture2D" uid="uid://bnt7qqmfkoo10" path="res://assets/2864303.png" id="1_0pd53"]
+[ext_resource type="Script" uid="uid://w0jiuqgea12" path="res://scenes/pancreas.gd" id="1_c3nsg"]
+
+[node name="Node2D" type="Node2D" unique_id=457058763]
+script = ExtResource("1_c3nsg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1346633089]
+
+[node name="2864303" type="Sprite2D" parent="." unique_id=629078917]
+position = Vector2(1.9999981, -73.99999)
+scale = Vector2(0.76464844, 0.77008116)
+texture = ExtResource("1_0pd53")
+
+[node name="Node" type="Control" parent="." unique_id=281887319]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="insulin" type="Button" parent="Node" unique_id=1269174935]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 47.0
+offset_right = 322.0
+offset_bottom = 97.0
+text = "Insulin"
+
+[node name="glucagon" type="Button" parent="Node" unique_id=1664811586]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 157.0
+offset_right = 355.0
+offset_bottom = 207.0
+text = "Glucagon"
+
+[node name="glucose_level" type="Label" parent="Node" unique_id=1744235648]
+layout_mode = 0
+offset_left = -536.0
+offset_top = -291.0
+offset_right = -319.0
+offset_bottom = -239.0
+scale = Vector2(0.545, 0.545)
+theme_override_font_sizes/font_size = 72
+text = "Glucose level: 90"
+
+[connection signal="button_down" from="Node/insulin" to="." method="_on_insulin_button_down"]
+[connection signal="button_down" from="Node/glucagon" to="." method="_on_glucagon_button_down"]

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dvdipe7pqjjw8"]
+
+[ext_resource type="Script" uid="uid://dcmratvqh24v8" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="main menu" type="Node2D" unique_id=400296325]
+script = ExtResource("1_l6cm7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1692501070]
+
+[node name="main" type="Control" parent="CanvasLayer" unique_id=879933139]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="glands_" type="Button" parent="CanvasLayer/main" unique_id=446215829]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 117.0
+offset_right = 1074.0
+offset_bottom = 272.0
+scale = Vector2(0.545, 0.545)
+theme_override_font_sizes/font_size = 107
+text = "Play as Gland"
+
+[node name="glands" type="Control" parent="CanvasLayer" unique_id=1669411007]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="pancreas" type="Button" parent="CanvasLayer/glands" unique_id=1582992296]
+layout_mode = 0
+offset_left = 453.99997
+offset_top = 134.99998
+offset_right = 827.0
+offset_bottom = 257.0
+scale = Vector2(0.58, 0.58)
+theme_override_font_sizes/font_size = 83
+text = "Pancreas"
+
+[node name="thymus" type="Button" parent="CanvasLayer/glands" unique_id=382769793]
+layout_mode = 0
+offset_left = 187.99994
+offset_top = 252.00002
+offset_right = 561.0
+offset_bottom = 374.00003
+scale = Vector2(0.58, 0.58)
+theme_override_font_sizes/font_size = 83
+text = "Thymus"
+
+[node name="adrenal" type="Button" parent="CanvasLayer/glands" unique_id=739776649]
+layout_mode = 0
+offset_left = 189.99994
+offset_top = 122.0
+offset_right = 563.0
+offset_bottom = 244.00002
+scale = Vector2(0.58, 0.58)
+theme_override_font_sizes/font_size = 83
+text = "Adrenal"
+
+[node name="thyroid" type="Button" parent="CanvasLayer/glands" unique_id=716993930]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 228.0
+offset_right = 1063.0
+offset_bottom = 350.0
+scale = Vector2(0.58, 0.58)
+theme_override_font_sizes/font_size = 83
+text = "Thyroid"
+
+[node name="back" type="Button" parent="CanvasLayer/glands" unique_id=1679700425]
+layout_mode = 0
+offset_left = 127.99994
+offset_top = 473.00003
+offset_right = 500.99997
+offset_bottom = 595.0
+scale = Vector2(0.58, 0.58)
+theme_override_font_sizes/font_size = 83
+text = "Back"
+
+[connection signal="button_down" from="CanvasLayer/main/glands_" to="." method="_on_glands_button_down"]
+[connection signal="button_down" from="CanvasLayer/glands/pancreas" to="." method="_on_pancreas_button_down"]
+[connection signal="button_down" from="CanvasLayer/glands/thymus" to="." method="_on_thymus_button_down"]
+[connection signal="button_down" from="CanvasLayer/glands/adrenal" to="." method="_on_adrenal_button_down"]
+[connection signal="button_down" from="CanvasLayer/glands/thyroid" to="." method="_on_thyroid_button_down"]
+[connection signal="button_down" from="CanvasLayer/glands/back" to="." method="_on_back_button_down"]

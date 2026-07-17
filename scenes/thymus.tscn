@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dtj2fmt113uwa"]
+
+[ext_resource type="Texture2D" uid="uid://7tq1ryf6u2ws" path="res://assets/thymus.png" id="1_rpri5"]
+
+[node name="Node2D" type="Node2D" unique_id=164105255]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=641695469]
+
+[node name="Thymus" type="Sprite2D" parent="." unique_id=94827337]
+position = Vector2(-5, -69)
+texture = ExtResource("1_rpri5")
+
+[node name="Control" type="Control" parent="." unique_id=313423387]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="pancreas" type="Button" parent="Control" unique_id=311916199]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 92.0
+offset_right = 734.0
+offset_bottom = 289.0
+scale = Vector2(0.54, 0.54)
+theme_override_font_sizes/font_size = 128
+text = "Thymosin"
+
+[node name="Label" type="Label" parent="Control" unique_id=1607552657]
+layout_mode = 0
+offset_left = -550.00006
+offset_top = -282.0
+offset_right = 769.99994
+offset_bottom = -124.0
+scale = Vector2(0.455, 0.455)
+theme_override_font_sizes/font_size = 116
+text = "Acquired Immunity: ON"

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bx75udraarvtb"]
+
+[ext_resource type="Script" uid="uid://borl85q5mlcw5" path="res://scripts/adrenal.gd" id="1_855ow"]
+[ext_resource type="Texture2D" uid="uid://bj5phtvuyvlfg" path="res://assets/201405_adrenal_medulla.png" id="1_uad51"]
+
+[node name="Node2D" type="Node2D" unique_id=652613790]
+script = ExtResource("1_855ow")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1549937560]
+
+[node name="201405AdrenalMedulla" type="Sprite2D" parent="." unique_id=1746344252]
+position = Vector2(265, -139)
+texture = ExtResource("1_uad51")
+
+[node name="Control" type="Control" parent="." unique_id=1210706525]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="adrenaline" type="Button" parent="Control" unique_id=243825498]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 45.0
+offset_right = 352.0
+offset_bottom = 123.0
+scale = Vector2(0.53, 0.53)
+theme_override_font_sizes/font_size = 97
+text = "Adrenaline"
+
+[node name="noradrenaline" type="Button" parent="Control" unique_id=180406291]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 134.0
+offset_right = 830.0
+offset_bottom = 275.0
+scale = Vector2(0.53, 0.53)
+theme_override_font_sizes/font_size = 97
+text = "Noradrenaline"
+
+[node name="glucose_level" type="Label" parent="Control" unique_id=712530305]
+layout_mode = 0
+offset_left = -542.00006
+offset_top = -284.00003
+offset_right = 117.99994
+offset_bottom = -174.00003
+scale = Vector2(0.58, 0.58)
+theme_override_font_sizes/font_size = 80
+text = "Glucose Level: 90"
+
+[node name="heart_rate" type="Label" parent="Control" unique_id=1250179835]
+layout_mode = 0
+offset_left = -549.0
+offset_top = -220.0
+offset_right = 111.0
+offset_bottom = -110.0
+scale = Vector2(0.58, 0.58)
+theme_override_font_sizes/font_size = 80
+text = "Heart Rate: 60/100 bpm"
+
+[node name="breathing" type="Label" parent="Control" unique_id=488124717]
+layout_mode = 0
+offset_left = -560.0
+offset_top = -155.99997
+offset_right = 355.0
+offset_bottom = -45.99997
+scale = Vector2(0.58, 0.58)
+theme_override_font_sizes/font_size = 80
+text = "Breathing: 15"
+
+[node name="blood pressure" type="Label" parent="Control" unique_id=1483066446]
+layout_mode = 0
+offset_left = -564.0
+offset_top = -78.99998
+offset_right = 609.0
+offset_bottom = 31.000023
+scale = Vector2(0.58, 0.58)
+theme_override_font_sizes/font_size = 80
+text = "Blood Pressure: 90–120 mmHg"
+
+[node name="blood pressure2" type="Label" parent="Control" unique_id=1243480866]
+layout_mode = 0
+offset_left = -568.0
+offset_top = 20.999985
+offset_right = 605.0
+offset_bottom = 130.99998
+scale = Vector2(0.58, 0.58)
+theme_override_font_sizes/font_size = 80
+text = "Digestion: ON"
+
+[connection signal="button_down" from="Control/adrenaline" to="." method="_on_adrenaline_button_down"]
+[connection signal="button_down" from="Control/noradrenaline" to="." method="_on_adrenaline_button_down"]
