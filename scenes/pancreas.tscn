@@ -13,9 +13,23 @@ position = Vector2(1.9999981, -73.99999)
 scale = Vector2(0.76464844, 0.77008116)
 texture = ExtResource("1_0pd53")
 
+[node name="cooldown" type="Timer" parent="." unique_id=1154660696]
+wait_time = 2.0
+one_shot = true
+
 [node name="Node" type="Control" parent="." unique_id=281887319]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="score" type="Label" parent="Node" unique_id=1648737629]
+layout_mode = 0
+offset_left = 292.0
+offset_top = -298.0
+offset_right = 736.0
+offset_bottom = -91.0
+scale = Vector2(0.54, 0.54)
+theme_override_font_sizes/font_size = 151
+text = "Score:"
 
 [node name="status" type="Label" parent="Node" unique_id=1936103788]
 layout_mode = 0
@@ -25,7 +39,6 @@ offset_right = 134.0
 offset_bottom = 316.0
 scale = Vector2(0.57, 0.57)
 theme_override_font_sizes/font_size = 78
-text = "Player is nothing"
 
 [node name="insulin" type="Button" parent="Node" unique_id=1269174935]
 layout_mode = 0
@@ -57,5 +70,6 @@ scale = Vector2(0.545, 0.545)
 theme_override_font_sizes/font_size = 72
 text = "Glucose level: 85"
 
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="button_down" from="Node/insulin" to="." method="_on_insulin_button_down"]
 [connection signal="button_down" from="Node/glucagon" to="." method="_on_glucagon_button_down"]

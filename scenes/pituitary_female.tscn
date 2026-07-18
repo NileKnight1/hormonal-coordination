@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cgqjxaspml3fe"]
+
+[ext_resource type="Script" uid="uid://c228nd824ydba" path="res://scripts/pituitary_female.gd" id="1_3rap2"]
+[ext_resource type="Texture2D" uid="uid://tre3o8rwhrp" path="res://assets/image-removebg-preview.png" id="2_46gwh"]
+
+[node name="Node2D" type="Node2D" unique_id=181875309]
+script = ExtResource("1_3rap2")
+
+[node name="ImageRemovebgPreview" type="Sprite2D" parent="." unique_id=2139273411]
+position = Vector2(11, -117)
+scale = Vector2(0.724, 0.724)
+texture = ExtResource("2_46gwh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=808609039]
+
+[node name="Control" type="Control" parent="." unique_id=629364995]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="lh" type="Button" parent="Control" unique_id=73022777]
+layout_mode = 0
+offset_left = 291.00003
+offset_top = -208.0
+offset_right = 573.0
+offset_bottom = -44.0
+scale = Vector2(0.535, 0.535)
+theme_override_font_sizes/font_size = 114
+text = "LH"
+
+[node name="fsh" type="Button" parent="Control" unique_id=143898230]
+layout_mode = 0
+offset_left = 295.0
+offset_top = -96.0
+offset_right = 458.0
+offset_bottom = 56.0
+scale = Vector2(0.6, 0.6)
+theme_override_font_sizes/font_size = 100
+text = "FSH"
+
+[node name="oxytocin" type="Button" parent="Control" unique_id=1468552330]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 5.0
+offset_right = 693.0
+offset_bottom = 157.0
+scale = Vector2(0.545, 0.545)
+theme_override_font_sizes/font_size = 105
+text = "Oxytocin"
+
+[node name="prolactin" type="Button" parent="Control" unique_id=1845638920]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 103.0
+offset_right = 707.0
+offset_bottom = 255.0
+scale = Vector2(0.545, 0.545)
+theme_override_font_sizes/font_size = 105
+text = "Prolactin"
+
+[node name="status" type="Label" parent="Control" unique_id=931406823]
+layout_mode = 0
+offset_left = -542.0
+offset_top = 213.0
+offset_right = 498.0
+offset_bottom = 384.0
+scale = Vector2(0.475, 0.475)
+theme_override_font_sizes/font_size = 125
+text = "Player is nothing."
+
+[connection signal="button_down" from="Control/lh" to="." method="_on_lh_button_down"]
+[connection signal="button_down" from="Control/fsh" to="." method="_on_fsh_button_down"]
+[connection signal="button_down" from="Control/oxytocin" to="." method="_on_oxytocin_button_down"]
+[connection signal="button_down" from="Control/prolactin" to="." method="_on_prolactin_button_down"]

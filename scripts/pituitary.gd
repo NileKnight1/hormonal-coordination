@@ -62,10 +62,6 @@ func run():
 	
 func fail():
 	print("failed")
-	
-	
-	
-	
 
 func _on_adh_button_down() -> void:
 	choosen = 0

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dmt00kcskx33v"]
+
+[ext_resource type="Texture2D" uid="uid://s4urd5bldf48" path="res://assets/pngtree-realistic-anatomical-drawing-of-pineal-gland-in-the-human-brain-system-png-image_17516721.png" id="1_5r4sj"]
+
+[node name="Node2D" type="Node2D" unique_id=451879649]
+
+[node name="PngtreeRealisticAnatomicalDrawingOfPinealGlandInTheHumanBrainSystemPngImage17516721" type="Sprite2D" parent="." unique_id=8418585]
+position = Vector2(5, -162.99998)
+scale = Vector2(0.43333334, 0.43333334)
+texture = ExtResource("1_5r4sj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=550088183]
+
+[node name="Control" type="Control" parent="." unique_id=994671585]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="melatonin" type="Button" parent="Control" unique_id=44956974]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.575, 0.575)
+theme_override_font_sizes/font_size = 123
+text = "Melatonin"
+
+[node name="Label" type="Label" parent="Control" unique_id=2000866135]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.525, 0.525)
+theme_override_font_sizes/font_size = 162

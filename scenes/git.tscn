@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bxvh8y5yeh8r0"]
+
+[ext_resource type="Texture2D" uid="uid://dr0og1djqq8ch" path="res://assets/pngtree-vibrant-illustration-of-the-human-stomach-and-small-intestine-depicting-a-png-image_17833662.png" id="1_iregt"]
+[ext_resource type="Script" uid="uid://0mevlk5xptcw" path="res://scripts/git.gd" id="1_ot78v"]
+
+[node name="Node2D" type="Node2D" unique_id=795807341]
+script = ExtResource("1_ot78v")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=586570855]
+
+[node name="PngtreeVibrantIllustrationOfTheHumanStomachAndSmallIntestineDepictingAPngImage17833662" type="Sprite2D" parent="." unique_id=204957474]
+position = Vector2(-24, -97)
+texture = ExtResource("1_iregt")
+
+[node name="Control" type="Control" parent="." unique_id=370322161]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="gastrin" type="Button" parent="Control" unique_id=167409285]
+layout_mode = 0
+offset_left = 197.0
+offset_top = -21.0
+offset_right = 541.0
+offset_bottom = 117.0
+scale = Vector2(0.54, 0.54)
+theme_override_font_sizes/font_size = 95
+text = "Gastrin"
+
+[node name="secretin" type="Button" parent="Control" unique_id=270222314]
+layout_mode = 0
+offset_left = 206.00002
+offset_top = 80.000015
+offset_right = 588.0
+offset_bottom = 218.00002
+scale = Vector2(0.54, 0.54)
+theme_override_font_sizes/font_size = 95
+text = "Secretin"
+
+[node name="cck" type="Button" parent="Control" unique_id=126963205]
+layout_mode = 0
+offset_left = 190.00002
+offset_top = -141.0
+offset_right = 534.0
+offset_bottom = -3.0
+scale = Vector2(0.54, 0.54)
+theme_override_font_sizes/font_size = 95
+text = "CCK"
+
+[node name="status" type="Label" parent="Control" unique_id=1020655273]
+layout_mode = 0
+offset_left = -484.00006
+offset_top = 175.00002
+offset_right = 130.99994
+offset_bottom = 391.0
+scale = Vector2(0.485, 0.485)
+theme_override_font_sizes/font_size = 158
+text = "Nothing"
+
+[connection signal="button_down" from="Control/gastrin" to="." method="_on_gastrin_button_down"]
+[connection signal="button_down" from="Control/secretin" to="." method="_on_secretin_button_down"]
+[connection signal="button_down" from="Control/cck" to="." method="_on_cck_button_down"]
