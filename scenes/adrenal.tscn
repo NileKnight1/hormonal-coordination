@@ -36,7 +36,7 @@ offset_right = 117.99994
 offset_bottom = -174.00003
 scale = Vector2(0.58, 0.58)
 theme_override_font_sizes/font_size = 80
-text = "Glucose Level: 90"
+text = "Glucose Level: 90 mg/dL"
 
 [node name="heart_rate" type="Label" parent="Control" unique_id=1250179835]
 layout_mode = 0
@@ -46,24 +46,24 @@ offset_right = 111.0
 offset_bottom = -110.0
 scale = Vector2(0.58, 0.58)
 theme_override_font_sizes/font_size = 80
-text = "Heart Rate: 60/100 bpm"
+text = "Heart Rate: 70 bpm"
 
 [node name="blood pressure" type="Label" parent="Control" unique_id=1483066446]
 layout_mode = 0
-offset_left = -571.0
-offset_top = -142.0
-offset_right = 602.0
-offset_bottom = -32.0
+offset_left = -557.0
+offset_top = -151.0
+offset_right = 616.0
+offset_bottom = -41.0
 scale = Vector2(0.58, 0.58)
 theme_override_font_sizes/font_size = 80
-text = "Blood Pressure: 90–120 mmHg"
+text = "Blood Pressure: 120 mmHg"
 
 [node name="digestion" type="Label" parent="Control" unique_id=1243480866]
 layout_mode = 0
-offset_left = -568.0
-offset_top = 20.999985
-offset_right = 605.0
-offset_bottom = 130.99998
+offset_left = -555.0
+offset_top = -68.00001
+offset_right = 618.0
+offset_bottom = 41.999992
 scale = Vector2(0.58, 0.58)
 theme_override_font_sizes/font_size = 80
 text = "Digestion: ON"

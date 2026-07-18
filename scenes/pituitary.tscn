@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bn12jmah6tb8y"]
 
+[ext_resource type="Script" uid="uid://dglj6nsjqd7fy" path="res://scripts/pituitary.gd" id="1_gn2em"]
 [ext_resource type="Texture2D" uid="uid://tre3o8rwhrp" path="res://assets/image-removebg-preview.png" id="1_jhwi8"]
 
 [node name="Node2D" type="Node2D" unique_id=181875309]
+script = ExtResource("1_gn2em")
 
 [node name="ImageRemovebgPreview" type="Sprite2D" parent="." unique_id=2139273411]
 position = Vector2(11, -117)
@@ -46,3 +48,28 @@ offset_bottom = 161.0
 scale = Vector2(0.545, 0.545)
 theme_override_font_sizes/font_size = 105
 text = "ADH"
+
+[node name="tsh" type="Button" parent="Control" unique_id=73022777]
+layout_mode = 0
+offset_left = 303.0
+offset_top = -209.0
+offset_right = 585.0
+offset_bottom = -57.0
+scale = Vector2(0.545, 0.545)
+theme_override_font_sizes/font_size = 105
+text = "TSH"
+
+[node name="status" type="Label" parent="Control" unique_id=931406823]
+layout_mode = 0
+offset_left = -542.0
+offset_top = 213.0
+offset_right = 498.0
+offset_bottom = 384.0
+scale = Vector2(0.475, 0.475)
+theme_override_font_sizes/font_size = 125
+text = "Player is nothing."
+
+[connection signal="button_down" from="Control/gh" to="." method="_on_gh_button_down"]
+[connection signal="button_down" from="Control/acth" to="." method="_on_acth_button_down"]
+[connection signal="button_down" from="Control/adh" to="." method="_on_adh_button_down"]
+[connection signal="button_down" from="Control/tsh" to="." method="_on_tsh_button_down"]
