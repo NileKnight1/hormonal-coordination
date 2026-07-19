@@ -6,6 +6,10 @@
 [node name="Node2D" type="Node2D" unique_id=1121657011]
 script = ExtResource("1_5o43r")
 
+[node name="cooldown" type="Timer" parent="." unique_id=355518937]
+wait_time = 2.0
+one_shot = true
+
 [node name="6ParathyroidGlandScaledE1587283480126RemovebgPreview" type="Sprite2D" parent="." unique_id=542691179]
 position = Vector2(-3.0000153, -76)
 scale = Vector2(0.61087424, 0.61087424)
@@ -47,7 +51,7 @@ offset_right = 451.00006
 offset_bottom = -124.0
 scale = Vector2(0.525, 0.525)
 theme_override_font_sizes/font_size = 109
-text = "Blood Ca⁺²: 9mg/dL"
+text = "Blood Ca⁺²: 9.5 mg/dL"
 
 [node name="status" type="Label" parent="Control" unique_id=755735251]
 layout_mode = 0
@@ -57,7 +61,17 @@ offset_right = 637.0
 offset_bottom = 362.0
 scale = Vector2(0.535, 0.535)
 theme_override_font_sizes/font_size = 118
-text = "Player is nothing."
 
+[node name="score" type="Label" parent="Control" unique_id=957233200]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -292.0
+offset_right = 393.0
+offset_bottom = -81.0
+scale = Vector2(0.56, 0.56)
+theme_override_font_sizes/font_size = 154
+text = "1"
+
+[connection signal="timeout" from="cooldown" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="Control/calcitonin" to="." method="_on_calcitonin_button_down"]
 [connection signal="button_down" from="Control/parathormone" to="." method="_on_parathormone_button_down"]

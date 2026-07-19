@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 	elif glucose_level < 140:
 		score += 1
 	else:
-		glucose_level -= 2
+		score -= 2
 		
 	$Node/score.text = str(score/60)
 	
@@ -93,10 +93,10 @@ func glucose_change(x,s):
 	var temp
 	var sum = 0
 	
-	while x:
+	while x > 0:
 		temp = randi_range(1, x)
 		x -= temp
-		print(x)
+		print(temp)
 		
 		glucose_level += temp * s
 		glucose_level_label.text = "Glucose level: " + str(glucose_level)
