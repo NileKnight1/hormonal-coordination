@@ -6,6 +6,11 @@
 [node name="Node2D" type="Node2D" unique_id=181875309]
 script = ExtResource("1_gn2em")
 
+[node name="general" type="Timer" parent="." unique_id=1996419799]
+
+[node name="timer" type="Timer" parent="." unique_id=1509881280]
+wait_time = 30.0
+
 [node name="ImageRemovebgPreview" type="Sprite2D" parent="." unique_id=2139273411]
 position = Vector2(11, -117)
 scale = Vector2(0.724, 0.724)
@@ -51,10 +56,10 @@ text = "ADH"
 
 [node name="tsh" type="Button" parent="Control" unique_id=73022777]
 layout_mode = 0
-offset_left = 303.0
-offset_top = -209.0
-offset_right = 585.0
-offset_bottom = -57.0
+offset_left = 328.00003
+offset_top = -198.0
+offset_right = 610.0
+offset_bottom = -46.0
 scale = Vector2(0.545, 0.545)
 theme_override_font_sizes/font_size = 105
 text = "TSH"
@@ -69,6 +74,27 @@ scale = Vector2(0.475, 0.475)
 theme_override_font_sizes/font_size = 125
 text = "Player is nothing."
 
+[node name="score" type="Label" parent="Control" unique_id=171414759]
+layout_mode = 0
+offset_left = 133.00002
+offset_top = -316.00003
+offset_right = 761.86597
+offset_bottom = -70.00003
+scale = Vector2(0.485, 0.485)
+theme_override_font_sizes/font_size = 180
+text = "Score: 0 "
+
+[node name="health" type="Label" parent="Control" unique_id=663227270]
+layout_mode = 0
+offset_left = -539.0
+offset_top = -294.0
+offset_right = 187.0
+offset_bottom = -48.0
+scale = Vector2(0.45, 0.45)
+theme_override_font_sizes/font_size = 172
+text = "Health: 3"
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="Control/gh" to="." method="_on_gh_button_down"]
 [connection signal="button_down" from="Control/acth" to="." method="_on_acth_button_down"]
 [connection signal="button_down" from="Control/adh" to="." method="_on_adh_button_down"]
