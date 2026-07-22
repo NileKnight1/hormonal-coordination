@@ -7,9 +7,11 @@
 script = ExtResource("1_gn2em")
 
 [node name="general" type="Timer" parent="." unique_id=1996419799]
+wait_time = 5.0
+autostart = true
 
 [node name="timer" type="Timer" parent="." unique_id=1509881280]
-wait_time = 30.0
+wait_time = 7.0
 
 [node name="ImageRemovebgPreview" type="Sprite2D" parent="." unique_id=2139273411]
 position = Vector2(11, -117)

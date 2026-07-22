@@ -13,6 +13,10 @@ position = Vector2(1.9999981, -73.99999)
 scale = Vector2(0.76464844, 0.77008116)
 texture = ExtResource("1_0pd53")
 
+[node name="general" type="Timer" parent="." unique_id=985964789]
+wait_time = 20.0
+autostart = true
+
 [node name="cooldown" type="Timer" parent="." unique_id=1154660696]
 wait_time = 2.0
 one_shot = true
@@ -70,6 +74,7 @@ scale = Vector2(0.545, 0.545)
 theme_override_font_sizes/font_size = 72
 text = "Glucose level: 85"
 
+[connection signal="timeout" from="general" to="." method="_on_general_timeout"]
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="button_down" from="Node/insulin" to="." method="_on_insulin_button_down"]
 [connection signal="button_down" from="Node/glucagon" to="." method="_on_glucagon_button_down"]

@@ -6,10 +6,15 @@
 [node name="Node2D" type="Node2D" unique_id=652613790]
 script = ExtResource("1_855ow")
 
+[node name="general" type="Timer" parent="." unique_id=81624576]
+wait_time = 20.0
+autostart = true
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1549937560]
 
 [node name="201405AdrenalMedulla" type="Sprite2D" parent="." unique_id=1746344252]
-position = Vector2(265, -139)
+position = Vector2(94.999985, -216)
+scale = Vector2(0.5875, 0.5875)
 texture = ExtResource("1_uad51")
 
 [node name="Control" type="Control" parent="." unique_id=1210706525]
@@ -19,63 +24,89 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="adrenaline" type="Button" parent="Control" unique_id=243825498]
+z_index = 1
 layout_mode = 0
-offset_left = 177.0
-offset_top = 45.0
-offset_right = 352.0
-offset_bottom = 123.0
+offset_left = 276.0
+offset_top = 224.0
+offset_right = 796.0
+offset_bottom = 365.0
 scale = Vector2(0.53, 0.53)
 theme_override_font_sizes/font_size = 97
 text = "Adrenaline"
 
 [node name="glucose_level" type="Label" parent="Control" unique_id=712530305]
+visible = false
 layout_mode = 0
 offset_left = -542.00006
 offset_top = -284.00003
 offset_right = 117.99994
 offset_bottom = -174.00003
-scale = Vector2(0.58, 0.58)
+scale = Vector2(0.34000003, 0.34000003)
 theme_override_font_sizes/font_size = 80
 text = "Glucose Level: 90 mg/dL"
 
 [node name="heart_rate" type="Label" parent="Control" unique_id=1250179835]
+visible = false
 layout_mode = 0
-offset_left = -549.0
-offset_top = -220.0
-offset_right = 111.0
-offset_bottom = -110.0
-scale = Vector2(0.58, 0.58)
+offset_left = -540.0
+offset_top = -245.0
+offset_right = 206.0
+offset_bottom = -135.0
+scale = Vector2(0.34000003, 0.34000003)
 theme_override_font_sizes/font_size = 80
 text = "Heart Rate: 70 bpm"
 
 [node name="blood pressure" type="Label" parent="Control" unique_id=1483066446]
+visible = false
 layout_mode = 0
-offset_left = -557.0
-offset_top = -151.0
-offset_right = 616.0
-offset_bottom = -41.0
-scale = Vector2(0.58, 0.58)
+offset_left = -542.0
+offset_top = -207.0
+offset_right = 631.0
+offset_bottom = -97.0
+scale = Vector2(0.34000003, 0.34000003)
 theme_override_font_sizes/font_size = 80
 text = "Blood Pressure: 120 mmHg"
 
 [node name="digestion" type="Label" parent="Control" unique_id=1243480866]
+visible = false
 layout_mode = 0
-offset_left = -555.0
-offset_top = -68.00001
-offset_right = 618.0
-offset_bottom = 41.999992
-scale = Vector2(0.58, 0.58)
+offset_left = -539.0
+offset_top = -169.0
+offset_right = 634.0
+offset_bottom = -59.0
+scale = Vector2(0.34000003, 0.34000003)
 theme_override_font_sizes/font_size = 80
 text = "Digestion: ON"
 
 [node name="event" type="Label" parent="Control" unique_id=693938265]
 layout_mode = 0
-offset_left = -540.0
-offset_top = 211.00002
-offset_right = 633.0
-offset_bottom = 321.0
-scale = Vector2(0.58, 0.58)
+offset_left = -554.0
+offset_top = 253.0
+offset_right = 530.4829
+offset_bottom = 363.0
+scale = Vector2(0.4599988, 0.4599988)
 theme_override_font_sizes/font_size = 80
 text = "Nothing right now"
 
+[node name="score" type="Label" parent="Control" unique_id=2099224922]
+layout_mode = 0
+offset_left = 201.99998
+offset_top = -286.0
+offset_right = 646.0
+offset_bottom = -96.0
+scale = Vector2(0.46, 0.46)
+theme_override_font_sizes/font_size = 132
+text = "Score: 0"
+
+[node name="health" type="Label" parent="Control" unique_id=1243171675]
+layout_mode = 0
+offset_left = 207.0
+offset_top = -203.0
+offset_right = 705.0
+offset_bottom = -13.0
+scale = Vector2(0.46, 0.46)
+theme_override_font_sizes/font_size = 132
+text = "Health: 3"
+
+[connection signal="timeout" from="general" to="." method="_on_general_timeout"]
 [connection signal="button_down" from="Control/adrenaline" to="." method="_on_adrenaline_button_down"]

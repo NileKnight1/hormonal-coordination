@@ -1,12 +1,15 @@
 extends Node2D
 
-var calcium_level = 95.0
-var score = 0
 
 @onready var status = $Control/status
 @onready var b1 = $Control/calcitonin
 @onready var b2 = $Control/parathormone
 @onready var cooldown = $cooldown
+
+
+var calcium_level = 95.0
+var score = 0
+var waiting_time = 10
 
 var ca_inc = [
 	["You're drinking milk.", 6],
@@ -99,7 +102,7 @@ func run():
 			
 			temp = randi_range(0, len(ca_dec)-1)
 			change_calcium(ca_dec[temp][1],-1)
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(waiting_time).timeout
 
 func _on_calcitonin_button_down() -> void:
 	cooldown.start()
@@ -140,5 +143,7 @@ func _on_parathormone_button_down() -> void:
 func _on_timer_timeout() -> void:
 	b1.disabled = 0
 	b2.disabled = 0
-	
-	
+
+func _on_general_timeout() -> void:
+	if waiting_time > 3:
+		waiting_time -=1

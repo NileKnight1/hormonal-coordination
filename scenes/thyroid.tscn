@@ -6,6 +6,10 @@
 [node name="Node2D" type="Node2D" unique_id=1121657011]
 script = ExtResource("1_5o43r")
 
+[node name="general" type="Timer" parent="." unique_id=1086234025]
+wait_time = 15.0
+autostart = true
+
 [node name="cooldown" type="Timer" parent="." unique_id=355518937]
 wait_time = 2.0
 one_shot = true
@@ -72,6 +76,7 @@ scale = Vector2(0.56, 0.56)
 theme_override_font_sizes/font_size = 154
 text = "1"
 
+[connection signal="timeout" from="general" to="." method="_on_general_timeout"]
 [connection signal="timeout" from="cooldown" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="Control/calcitonin" to="." method="_on_calcitonin_button_down"]
 [connection signal="button_down" from="Control/parathormone" to="." method="_on_parathormone_button_down"]
