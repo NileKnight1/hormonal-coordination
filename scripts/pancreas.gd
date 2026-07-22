@@ -45,7 +45,7 @@ var actions = [
 
 func _ready() -> void:
 	glucose_change(0, 1)
-	print(global.scores)
+	#print(global.scores)
 	await get_tree().create_timer(5).timeout
 	
 	run()
@@ -73,8 +73,10 @@ func death():
 	
 	
 	alive = 0
-	global.scores[1] = ["pancreas", score/60]
-	#print(global.scores[1])
+	#global.scores[1] = ["pancreas", score/60]
+	global.update_scores("pancreas", score/60)
+	
+	print(global.scores)
 	global.save_scores()
 
 func run():

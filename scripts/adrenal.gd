@@ -7,6 +7,7 @@ var cur_event
 @onready var adrenaline =$Control/adrenaline
 @onready var general = $general
 
+var alive = 1
 var score = 0
 var health = 3
 var waiting_time = 5
@@ -62,6 +63,14 @@ func change():
 
 func death():
 	print("You're dead.")
+	alive = 0
+	#global.scores[2] = ["adrenal", score]
+	
+	global.update_scores("adrenal", score)
+	adrenaline.disabled = 1
+	
+	global.save_scores()
+	
 func failure():
 	print("You've failed.")
 	
@@ -72,7 +81,7 @@ func _on_adrenaline_button_down() -> void:
 
 func run():
 	
-	while 1:
+	while alive:
 		var tempx = randi_range(0,3)
 		var tempy = randi_range(0,3)
 		cur_event = tempx
@@ -112,12 +121,12 @@ func run():
 					health -= 1;
 			1:
 				if digestion:
-					score += 2
+					score += 1
 				else:
 					score -= 1
 			2:
 				if !digestion:
-					score += 2
+					score += 1
 				else:
 					score -= 1
 			3:
@@ -125,7 +134,8 @@ func run():
 					score += 3
 				else: 
 					health -= 1
-		
+		if score < 0:
+			score = 0
 		#match tempx:
 			#0:
 				#if digestion < 3:
@@ -140,7 +150,9 @@ func run():
 				#if digestion > 1:
 					#death()
 		
-		if health < 1: print("dead")
+		if health < 1: 
+			death()
+			
 		print(score)
 		$Control/score.text = "Score: " + str(score)
 		$Control/health.text = "Health: " + str(health)

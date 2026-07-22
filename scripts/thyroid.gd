@@ -6,7 +6,7 @@ extends Node2D
 @onready var b2 = $Control/parathormone
 @onready var cooldown = $cooldown
 
-
+var alive = 1
 var calcium_level = 95.0
 var score = 0
 var waiting_time = 10
@@ -56,14 +56,23 @@ func change_calcium(x, s):
 	
 	print("Ca end " + str(calcium_level))
 	
-	if calcium_level < 7:
+	if calcium_level < 70:
 		death()
-	if calcium_level > 12.5:
+	if calcium_level > 125:
 		death()
 
 func death():
-	pass
-	#print("You're dead.")
+	print("You're dead.")
+	alive = 0
+	#global.scores[0] = ["thyroid", score/60]
+	global.update_scores("thyroid", score/60)
+
+	
+	b1.disabled = 1
+	b2.disabled = 1
+	
+	global.save_scores()
+
 
 func _ready() -> void:
 	change_calcium(0, 1)
@@ -72,20 +81,23 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	if calcium_level < 80:
-		score -= 3
-	elif calcium_level < 105:
-		score += 2
-	elif calcium_level < 115:
-		score += 1
-	else:
-		score -= 2
-		
-	$Control/score.text = str(score/60)
+	if alive:
+		if score < 0:
+			return
+		elif calcium_level < 80:
+			score -= 3
+		elif calcium_level < 105:
+			score += 2
+		elif calcium_level < 115:
+			score += 1
+		else:
+			score -= 2
+			
+		$Control/score.text = str(score/60)
 
 func run():
 	await get_tree().create_timer(3).timeout
-	while 1:
+	while alive:
 		var temp = randi_range(0,1)
 		
 		if !temp:
@@ -145,5 +157,5 @@ func _on_timer_timeout() -> void:
 	b2.disabled = 0
 
 func _on_general_timeout() -> void:
-	if waiting_time > 3:
+	if waiting_time > 1.5:
 		waiting_time -=1

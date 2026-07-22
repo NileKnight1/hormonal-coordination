@@ -11,6 +11,7 @@ extends Node2D
 @onready var b3 = $Control/adh
 @onready var b4 = $Control/tsh
 
+var alive = 1
 var waiting_time = 7
 var choosen = -1
 var score = 0
@@ -54,7 +55,7 @@ var list_gh = [
 ]
 
 func run():
-	while 1:
+	while alive:
 		var tempx = randi_range(0,3)
 		var tempy = randi_range(0,3)
 		
@@ -84,8 +85,7 @@ func run():
 			elif temp_time > 0:
 				score += 1
 		
-		if health == 0:
-			death()
+
 		
 		timer.wait_time = waiting_time
 		
@@ -93,6 +93,9 @@ func run():
 		b2.disabled = 0 
 		b3.disabled = 0
 		b4.disabled = 0
+		
+		if health == 0:
+			death()
 		
 		$Control/score.text = "Score: " + str(score)
 		
@@ -103,6 +106,18 @@ func run():
 	
 func death():
 	print("death")
+	alive = 0
+	b1.disabled = 1
+	b2.disabled = 1
+	b3.disabled = 1
+	b4.disabled = 1
+	
+	#global.scores[3] = ["pituitary", score]
+	global.update_scores("pituitary", score)
+
+	
+	global.save_scores()
+	
 
 func pressed():
 	#print(int(timer.time_left))
