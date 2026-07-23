@@ -6,9 +6,16 @@ extends Node2D
 @onready var cooldown = $cooldown
 @onready var b1 = $Node/insulin
 @onready var b2 = $Node/glucagon
+@onready var hormones = $hormones
+
+var insulin_scripts = preload("res://scripts/pancreas_insulin.gd")
+var glucagon_scripts = preload("res://scripts/pancreas_insulin.gd")
+
+
 
 var waiting_time = 10
 var alive = 1
+
 
 var glucose_level = 85
 var score = 0
@@ -45,7 +52,7 @@ var actions = [
 
 func _ready() -> void:
 	glucose_change(0, 1)
-	#print(global.scores)
+	#print(global.scores)[[[[[
 	await get_tree().create_timer(5).timeout
 	
 	run()
@@ -113,7 +120,7 @@ func glucose_change(x,s):
 	while x > 0:
 		temp = randi_range(1, x)
 		x -= temp
-		print(temp)
+		#print(temp)
 		
 		glucose_level += temp * s
 		glucose_level_label.text = "Glucose level: " + str(glucose_level)
@@ -128,6 +135,20 @@ func _on_insulin_button_down() -> void:
 	cooldown.start()
 	b1.disabled = 1
 	b2.disabled = 1
+	print("Insulin")
+	
+	for i in range(4):
+		
+		var insulin = preload("res://scenes/insulin.tscn").instantiate()
+		insulin.scale = Vector2(0.127, 0.127)
+		insulin.position = Vector2(69, 49)
+		insulin.set_script(insulin_scripts)
+		hormones.add_child(insulin)
+		await get_tree().create_timer(0.2).timeout
+
+	
+	print(hormones)
+	
 	
 	glucose_change(8, -1)
 
@@ -136,6 +157,18 @@ func _on_glucagon_button_down() -> void:
 	cooldown.start()
 	b1.disabled = 1
 	b2.disabled = 1
+	print("Glucagon")
+	
+	for i in range(2):
+		var glucagon = preload("res://scenes/glucagon.tscn").instantiate()
+		glucagon.scale = Vector2(0.127, 0.127)
+		glucagon.position = Vector2(69, 49)
+		glucagon.set_script(glucagon_scripts)
+		hormones.add_child(glucagon)
+		await get_tree().create_timer(0.2).timeout
+		
+		
+	
 	
 	glucose_change(4, 1)
 	

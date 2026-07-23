@@ -2,13 +2,27 @@
 
 [ext_resource type="Texture2D" uid="uid://bnt7qqmfkoo10" path="res://assets/2864303.png" id="1_0pd53"]
 [ext_resource type="Script" uid="uid://w0jiuqgea12" path="res://scripts/pancreas.gd" id="1_c3nsg"]
+[ext_resource type="Texture2D" uid="uid://bhe12e7tma7ie" path="res://assets/button_insulinnn.png" id="3_l2nus"]
+[ext_resource type="Texture2D" uid="uid://c1s3xd5v8hkvv" path="res://assets/pancreas.png" id="4_1m1mg"]
+[ext_resource type="Texture2D" uid="uid://dvt2yk5mndduy" path="res://assets/button_glucagon.png" id="4_fhetk"]
+[ext_resource type="PackedScene" uid="uid://b4mej85qfn2si" path="res://scenes/insulin.tscn" id="4_h5dmg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3nsg"]
+bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
 
 [node name="Node2D" type="Node2D" unique_id=457058763]
 script = ExtResource("1_c3nsg")
 
+[node name="Pancreas" type="Sprite2D" parent="." unique_id=1415451254]
+position = Vector2(-5.000002, 41)
+rotation = 0.12621231
+scale = Vector2(0.6594907, 0.65949076)
+texture = ExtResource("4_1m1mg")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1346633089]
 
 [node name="2864303" type="Sprite2D" parent="." unique_id=629078917]
+visible = false
 position = Vector2(1.9999981, -73.99999)
 scale = Vector2(0.76464844, 0.77008116)
 texture = ExtResource("1_0pd53")
@@ -21,9 +35,16 @@ autostart = true
 wait_time = 2.0
 one_shot = true
 
+[node name="hormones" type="Node2D" parent="." unique_id=1538665573]
+
+[node name="insulin" parent="hormones" unique_id=1999249162 instance=ExtResource("4_h5dmg")]
+position = Vector2(193.00002, 346)
+scale = Vector2(0.12714562, 0.12714562)
+
 [node name="Node" type="Control" parent="." unique_id=281887319]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 
 [node name="score" type="Label" parent="Node" unique_id=1648737629]
 layout_mode = 0
@@ -44,25 +65,27 @@ offset_bottom = 316.0
 scale = Vector2(0.57, 0.57)
 theme_override_font_sizes/font_size = 78
 
-[node name="insulin" type="Button" parent="Node" unique_id=1269174935]
+[node name="insulin" type="TextureButton" parent="Node" unique_id=1374812601]
 layout_mode = 0
 offset_left = 272.0
 offset_top = 47.0
-offset_right = 322.0
-offset_bottom = 97.0
+offset_right = 693.0
+offset_bottom = 229.0
 scale = Vector2(0.505, 0.505)
-theme_override_font_sizes/font_size = 127
-text = "Insulin"
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_l2nus")
+stretch_mode = 0
 
-[node name="glucagon" type="Button" parent="Node" unique_id=1664811586]
+[node name="glucagon" type="TextureButton" parent="Node" unique_id=1871348886]
 layout_mode = 0
-offset_left = 274.0
-offset_top = 157.0
-offset_right = 355.0
-offset_bottom = 207.0
+offset_left = 275.0
+offset_top = 153.0
+offset_right = 722.9166
+offset_bottom = 346.75
 scale = Vector2(0.48, 0.48)
-theme_override_font_sizes/font_size = 112
-text = "Glucagon"
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_fhetk")
+stretch_mode = 0
 
 [node name="glucose_level" type="Label" parent="Node" unique_id=1744235648]
 layout_mode = 0
@@ -73,6 +96,16 @@ offset_bottom = -239.0
 scale = Vector2(0.545, 0.545)
 theme_override_font_sizes/font_size = 72
 text = "Glucose level: 85"
+
+[node name="Panel" type="Panel" parent="." unique_id=857130813]
+z_index = -1
+offset_left = -574.0
+offset_top = -330.0
+offset_right = 579.0
+offset_bottom = 326.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c3nsg")
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="general" to="." method="_on_general_timeout"]
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

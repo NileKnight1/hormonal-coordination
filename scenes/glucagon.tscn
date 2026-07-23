@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cvogbjxtbrp4t"]
+
+[ext_resource type="Texture2D" uid="uid://ccsneqy5vi6eg" path="res://assets/glucagon.png" id="1_b5qg5"]
+
+[node name="insulin" type="Node2D" unique_id=1999249162]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1967771385]
+texture = ExtResource("1_b5qg5")

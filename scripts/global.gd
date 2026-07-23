@@ -1,22 +1,30 @@
 extends Node
 
-var scores = [
-	["thyroid", 0],
-	["pancreas", 0],
-	["adrenal", 0],
-	["pituitary", 0],
+var scores = {
+	"thyroid": 0,
+	"pancreas": 0,
+	"adrenal": 0,
+	"pituitary": 0,
 	
-]
+}
+
+func reset_scores():
+	scores = {
+		"thyroid": 0,
+		"pancreas": 0,
+		"adrenal": 0,
+		"pituitary": 0,
+}
 
 func update_scores(key, score):
-	if key == "thyroid":
-		scores[0][1] = max(scores[0][1], score)
-	if key == "pancreas":
-		scores[1][1] = max(scores[1][1], score)
-	if key == "adrenal":
-		scores[2][1] = max(scores[2][1], score)
-	if key == "pituitary":
-		scores[3][1] = max(scores[3][1], score)
+	#scores[0][1] = max(scores[0][1], score)
+	#scores[1][1] = max(scores[1][1], score)
+	#scores[2][1] = max(scores[2][1], score)
+	#scores[3][1] = max(scores[3][1], score)
+	#print(key)
+	#print(score)
+	#print(scores[key])
+	scores[key] = max(scores[key], score)
 
 
 
