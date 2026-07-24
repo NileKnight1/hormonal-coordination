@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vc1sp7e4l4kc" path="res://scripts/thyroid.gd" id="1_5o43r"]
 [ext_resource type="Texture2D" uid="uid://dwth37kpviqy4" path="res://assets/6-parathyroid-gland-scaled-e1587283480126-removebg-preview.png" id="1_n8mbt"]
+[ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="3_8jgsw"]
 
 [node name="Node2D" type="Node2D" unique_id=1121657011]
 script = ExtResource("1_5o43r")
@@ -54,6 +55,7 @@ offset_top = -273.0
 offset_right = 451.00006
 offset_bottom = -124.0
 scale = Vector2(0.525, 0.525)
+theme_override_fonts/font = ExtResource("3_8jgsw")
 theme_override_font_sizes/font_size = 109
 text = "Blood Ca⁺²: 9.5 mg/dL"
 
@@ -68,13 +70,15 @@ theme_override_font_sizes/font_size = 118
 
 [node name="score" type="Label" parent="Control" unique_id=957233200]
 layout_mode = 0
-offset_left = 305.0
-offset_top = -292.0
-offset_right = 393.0
-offset_bottom = -81.0
-scale = Vector2(0.56, 0.56)
-theme_override_font_sizes/font_size = 154
-text = "1"
+offset_left = 179.0
+offset_top = -303.99997
+offset_right = 3635.0
+offset_bottom = 631.0
+scale = Vector2(0.11, 0.11)
+theme_override_fonts/font = ExtResource("3_8jgsw")
+theme_override_font_sizes/font_size = 758
+text = "Score: 000"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="general" to="." method="_on_general_timeout"]
 [connection signal="timeout" from="cooldown" to="." method="_on_timer_timeout"]

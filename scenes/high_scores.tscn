@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://5eerv40ib0xc"]
+
+[ext_resource type="Script" uid="uid://dt8twb0o6k3k0" path="res://scripts/high_scores.gd" id="1_3582i"]
+[ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="1_jirj5"]
+
+[node name="Node2D" type="Node2D" unique_id=1491689388]
+script = ExtResource("1_3582i")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=834756649]
+
+[node name="pancreas" type="Label" parent="." unique_id=431872471]
+offset_left = -147.0
+offset_top = -226.99998
+offset_right = 2894.0
+offset_bottom = 524.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("1_jirj5")
+theme_override_font_sizes/font_size = 609
+text = "Pancreas: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="thyroid" type="Label" parent="." unique_id=605239678]
+offset_left = -145.0
+offset_top = -164.0
+offset_right = 2896.0
+offset_bottom = 587.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("1_jirj5")
+theme_override_font_sizes/font_size = 609
+text = "Thyroid: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pituitary" type="Label" parent="." unique_id=722630457]
+offset_left = -145.0
+offset_top = -35.000015
+offset_right = 2896.0
+offset_bottom = 716.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("1_jirj5")
+theme_override_font_sizes/font_size = 609
+text = "Pituitary: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Adrenal" type="Label" parent="." unique_id=484345672]
+offset_left = -145.0
+offset_top = -100.0
+offset_right = 2896.0
+offset_bottom = 651.0
+scale = Vector2(0.1, 0.1)
+theme_override_fonts/font = ExtResource("1_jirj5")
+theme_override_font_sizes/font_size = 609
+text = "Adrenal: 0"
+horizontal_alignment = 1
+vertical_alignment = 1

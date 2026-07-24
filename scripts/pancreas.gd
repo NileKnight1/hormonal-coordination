@@ -71,12 +71,12 @@ func _process(delta: float) -> void:
 		else:
 			score -= 2
 			
-	$Node/score.text = str(score/60)
+	$Node/score.text = "Score: " + str(score/60)
 	
 func death():
 	print("You're dead")
 	b1.disabled = 1
-	b2.disabled = 1
+	b2.disabled = 1 
 	
 	
 	alive = 0
@@ -131,7 +131,7 @@ func glucose_change(x,s):
 	if glucose_level > 300:
 		death()
 
-func _on_insulin_button_down() -> void:
+func _on_insulin_button() -> void:
 	cooldown.start()
 	b1.disabled = 1
 	b2.disabled = 1
@@ -153,7 +153,7 @@ func _on_insulin_button_down() -> void:
 	glucose_change(8, -1)
 
 
-func _on_glucagon_button_down() -> void:
+func _on_glucagon_button() -> void:
 	cooldown.start()
 	b1.disabled = 1
 	b2.disabled = 1
@@ -168,8 +168,6 @@ func _on_glucagon_button_down() -> void:
 		await get_tree().create_timer(0.2).timeout
 		
 		
-	
-	
 	glucose_change(4, 1)
 	
 

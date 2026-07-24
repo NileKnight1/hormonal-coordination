@@ -93,7 +93,7 @@ func _process(delta: float) -> void:
 		else:
 			score -= 2
 			
-		$Control/score.text = str(score/60)
+		$Control/score.text = "Score: " + str(score/60)
 
 func run():
 	await get_tree().create_timer(3).timeout
