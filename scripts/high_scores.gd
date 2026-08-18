@@ -10,4 +10,4 @@ func update():
 	$thyroid.text = "Thyroid: " + str(global.scores["thyroid"])
 	$adrenal.text = "Adrenal: " + str(global.scores["adrenal"])
 	$pituitary.text = "Pituitary: " + str(global.scores["pituitary"])
-	
+	#$sex.text = "Sex: " + str(global.scores)

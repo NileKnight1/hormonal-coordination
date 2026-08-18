@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://bn12jmah6tb8y"]
 
 [ext_resource type="Script" uid="uid://dglj6nsjqd7fy" path="res://scripts/pituitary.gd" id="1_gn2em"]
-[ext_resource type="Texture2D" uid="uid://tre3o8rwhrp" path="res://assets/image-removebg-preview.png" id="1_jhwi8"]
+[ext_resource type="Texture2D" uid="uid://brkn6v4pjqou6" path="res://assets/pituitary.png" id="2_5an1s"]
 [ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="3_tqf48"]
+[ext_resource type="Texture2D" uid="uid://d4ba486nqurbj" path="res://assets/growth1button.png" id="3_uxbcf"]
+[ext_resource type="Texture2D" uid="uid://dadg6k6kvohhq" path="res://assets/growth2button.png" id="4_0aoxy"]
+[ext_resource type="Texture2D" uid="uid://cmpdciohl8qum" path="res://assets/growth3button.png" id="5_gkmyw"]
+[ext_resource type="Texture2D" uid="uid://b8y6gdsun0kjs" path="res://assets/growth4button.png" id="6_ivayi"]
+[ext_resource type="Texture2D" uid="uid://cddu78c5mwmh" path="res://assets/acth1button.png" id="7_47ces"]
+[ext_resource type="Texture2D" uid="uid://df7dd0atnu0jr" path="res://assets/acth2button.png" id="8_lgqbv"]
+[ext_resource type="Texture2D" uid="uid://cvedjs8psu5cc" path="res://assets/acth3button.png" id="9_gf852"]
+[ext_resource type="Texture2D" uid="uid://psvbpeae0okk" path="res://assets/acth4button.png" id="10_6jh1j"]
+[ext_resource type="Texture2D" uid="uid://bmay72fw3lgr3" path="res://assets/adh1button.png" id="11_3mpay"]
+[ext_resource type="Texture2D" uid="uid://b7oq2jjqlpc8c" path="res://assets/adh2button.png" id="12_51ux7"]
+[ext_resource type="Texture2D" uid="uid://cjfw0k3n60giy" path="res://assets/adh3button.png" id="13_2jn1a"]
+[ext_resource type="Texture2D" uid="uid://bgslytfkcb7qj" path="res://assets/adh4button.png" id="14_o5luv"]
+[ext_resource type="Texture2D" uid="uid://xeyar7i1x48p" path="res://assets/tsh1button.png" id="15_o0xn1"]
+[ext_resource type="Texture2D" uid="uid://d0lodhugvm8ok" path="res://assets/tsh2button.png" id="16_gt6xm"]
+[ext_resource type="Texture2D" uid="uid://hmkss6qr4e82" path="res://assets/tsh3button.png" id="17_7284t"]
+[ext_resource type="Texture2D" uid="uid://k16o2ya22t8b" path="res://assets/tsh4button.png" id="18_8uehd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5an1s"]
+bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
 
 [node name="Node2D" type="Node2D" unique_id=181875309]
 script = ExtResource("1_gn2em")
@@ -15,9 +34,9 @@ autostart = true
 wait_time = 7.0
 
 [node name="ImageRemovebgPreview" type="Sprite2D" parent="." unique_id=2139273411]
-position = Vector2(11, -117)
-scale = Vector2(0.724, 0.724)
-texture = ExtResource("1_jhwi8")
+position = Vector2(47.351135, -30.239994)
+scale = Vector2(0.40229633, 0.40229633)
+texture = ExtResource("2_5an1s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=808609039]
 
@@ -27,45 +46,53 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="gh" type="Button" parent="Control" unique_id=1866667170]
+[node name="gh" type="TextureButton" parent="Control" unique_id=1317333788]
 layout_mode = 0
-offset_left = 291.0
-offset_top = 106.0
-offset_right = 454.0
-offset_bottom = 258.0
-scale = Vector2(0.545, 0.545)
-theme_override_font_sizes/font_size = 105
-text = "GH"
+offset_left = 295.0
+offset_top = -19.999996
+offset_right = 2089.0
+offset_bottom = 545.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("3_uxbcf")
+texture_pressed = ExtResource("4_0aoxy")
+texture_hover = ExtResource("5_gkmyw")
+texture_disabled = ExtResource("6_ivayi")
 
-[node name="acth" type="Button" parent="Control" unique_id=143898230]
+[node name="acth" type="TextureButton" parent="Control" unique_id=471984824]
 layout_mode = 0
 offset_left = 295.0
 offset_top = -96.0
-offset_right = 458.0
+offset_right = 577.0
 offset_bottom = 56.0
-scale = Vector2(0.545, 0.545)
-theme_override_font_sizes/font_size = 105
-text = "ACTH"
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("7_47ces")
+texture_pressed = ExtResource("8_lgqbv")
+texture_hover = ExtResource("9_gf852")
+texture_disabled = ExtResource("10_6jh1j")
 
-[node name="adh" type="Button" parent="Control" unique_id=2073041327]
+[node name="adh" type="TextureButton" parent="Control" unique_id=1627542681]
 layout_mode = 0
-offset_left = 299.00003
-offset_top = 9.0
-offset_right = 581.0
-offset_bottom = 161.0
-scale = Vector2(0.545, 0.545)
-theme_override_font_sizes/font_size = 105
-text = "ADH"
+offset_left = 299.0
+offset_top = 47.000004
+offset_right = 2093.0
+offset_bottom = 612.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("11_3mpay")
+texture_pressed = ExtResource("12_51ux7")
+texture_hover = ExtResource("13_2jn1a")
+texture_disabled = ExtResource("14_o5luv")
 
-[node name="tsh" type="Button" parent="Control" unique_id=73022777]
+[node name="tsh" type="TextureButton" parent="Control" unique_id=547905668]
 layout_mode = 0
-offset_left = 328.00003
-offset_top = -198.0
-offset_right = 610.0
-offset_bottom = -46.0
-scale = Vector2(0.545, 0.545)
-theme_override_font_sizes/font_size = 105
-text = "TSH"
+offset_left = 296.0
+offset_top = -161.0
+offset_right = 2090.0
+offset_bottom = 404.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("15_o0xn1")
+texture_pressed = ExtResource("16_gt6xm")
+texture_hover = ExtResource("17_7284t")
+texture_disabled = ExtResource("18_8uehd")
 
 [node name="status" type="Label" parent="Control" unique_id=931406823]
 layout_mode = 0
@@ -99,6 +126,16 @@ scale = Vector2(0.12, 0.12)
 theme_override_fonts/font = ExtResource("3_tqf48")
 theme_override_font_sizes/font_size = 684
 text = "Health: 3"
+
+[node name="Panel" type="Panel" parent="." unique_id=626630026]
+z_index = -1
+offset_left = -574.0
+offset_top = -330.0
+offset_right = 579.0
+offset_bottom = 326.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5an1s")
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="Control/gh" to="." method="_on_gh_button_down"]

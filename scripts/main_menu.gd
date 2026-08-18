@@ -24,16 +24,15 @@ func _on_back_button_down() -> void:
 
 func _on_pancreas_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/pancreas.tscn")
-	
-
 
 func _on_thymus_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/thymus.tscn")
-
 
 func _on_thyroid_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/pancreas.tscn")
 
 func _on_adrenal_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/adrenal.tscn")
-	
+
+func _on_git_button_down() -> void:
+	get_tree().change_scene_to_file("res://scenes/git.tscn")

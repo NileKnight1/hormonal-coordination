@@ -3,17 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bnt7qqmfkoo10" path="res://assets/2864303.png" id="1_0pd53"]
 [ext_resource type="Script" uid="uid://w0jiuqgea12" path="res://scripts/pancreas.gd" id="1_c3nsg"]
 [ext_resource type="Texture2D" uid="uid://c1s3xd5v8hkvv" path="res://assets/pancreas.png" id="4_1m1mg"]
-[ext_resource type="PackedScene" uid="uid://b4mej85qfn2si" path="res://scenes/insulin.tscn" id="4_h5dmg"]
 [ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="5_8dnf8"]
-[ext_resource type="Texture2D" uid="uid://bxvfaefslgfx8" path="res://assets/button_insulin_normal.png" id="5_t61am"]
-[ext_resource type="Texture2D" uid="uid://bu5wkrbs62lhd" path="res://assets/button_insulin_pressed.png" id="6_biowq"]
-[ext_resource type="Texture2D" uid="uid://d2dvj7ushscuk" path="res://assets/button_insulin_hovered.png" id="7_3ewvc"]
-[ext_resource type="Texture2D" uid="uid://unt2r4tgcbm8" path="res://assets/button_insulin_disabled.png" id="8_ukj0f"]
-[ext_resource type="Texture2D" uid="uid://bp2m41jtblarn" path="res://assets/button_glucagon_normal.png" id="9_3ewvc"]
-[ext_resource type="BitMap" uid="uid://dypt4ti64dbly" path="res://assets/bit.png" id="9_jaika"]
-[ext_resource type="Texture2D" uid="uid://drx5v5w21ja6n" path="res://assets/button_glucagon_pressed.png" id="10_jaika"]
-[ext_resource type="Texture2D" uid="uid://deqvnynxxr0a6" path="res://assets/button_glucagon_hovered.png" id="10_ukj0f"]
-[ext_resource type="Texture2D" uid="uid://c83s4qbfo2lqs" path="res://assets/button_glucagon_disabled.png" id="11_jaika"]
+[ext_resource type="Texture2D" uid="uid://boc4vldp2bgn8" path="res://assets/insulin1buttonmax.png" id="6_biowq"]
+[ext_resource type="Texture2D" uid="uid://b865o5m0n4wh6" path="res://assets/insulin2buttonmax.png" id="7_3ewvc"]
+[ext_resource type="Texture2D" uid="uid://b6fsswiya66m2" path="res://assets/insulin3buttonmax.png" id="8_ukj0f"]
+[ext_resource type="Texture2D" uid="uid://j2xsvofoh80e" path="res://assets/insulin4buttonmax.png" id="9_8dnf8"]
+[ext_resource type="Texture2D" uid="uid://c6vhobs7uwamn" path="res://assets/glucagon1buttonmax.png" id="11_8dnf8"]
+[ext_resource type="Texture2D" uid="uid://cwhfuy20ten8b" path="res://assets/glucagon2buttonmax.png" id="12_a13el"]
+[ext_resource type="Texture2D" uid="uid://cmnati6e620uf" path="res://assets/glucagon3buttonmax.png" id="13_g8xfv"]
+[ext_resource type="Texture2D" uid="uid://dx50c8gvrn7r3" path="res://assets/glucagon4buttonmax.png" id="14_vnfpr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3nsg"]
 bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
@@ -45,10 +43,6 @@ one_shot = true
 
 [node name="hormones" type="Node2D" parent="." unique_id=1538665573]
 
-[node name="insulin" parent="hormones" unique_id=1999249162 instance=ExtResource("4_h5dmg")]
-position = Vector2(193.00002, 346)
-scale = Vector2(0.12714562, 0.12714562)
-
 [node name="Node" type="Control" parent="." unique_id=281887319]
 layout_mode = 3
 anchors_preset = 0
@@ -77,32 +71,30 @@ theme_override_font_sizes/font_size = 78
 
 [node name="insulin" type="TextureButton" parent="Node" unique_id=1374812601]
 layout_mode = 0
-offset_left = 272.0
-offset_top = 47.0
-offset_right = 693.0
-offset_bottom = 229.0
-scale = Vector2(0.505, 0.505)
+offset_left = 291.0
+offset_top = 62.0
+offset_right = 2085.0
+offset_bottom = 627.0
+scale = Vector2(0.1, 0.1)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("5_t61am")
-texture_pressed = ExtResource("6_biowq")
-texture_hover = ExtResource("7_3ewvc")
-texture_disabled = ExtResource("8_ukj0f")
-texture_click_mask = ExtResource("9_jaika")
-stretch_mode = 0
+texture_normal = ExtResource("6_biowq")
+texture_pressed = ExtResource("7_3ewvc")
+texture_hover = ExtResource("8_ukj0f")
+texture_disabled = ExtResource("9_8dnf8")
+stretch_mode = 5
 
 [node name="glucagon" type="TextureButton" parent="Node" unique_id=502675191]
 layout_mode = 0
-offset_left = 272.0
-offset_top = 112.0
-offset_right = 693.0
-offset_bottom = 294.0
-scale = Vector2(0.505, 0.505)
+offset_left = 291.0
+offset_top = 125.0
+offset_right = 2085.0
+offset_bottom = 690.0
+scale = Vector2(0.1, 0.1)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("9_3ewvc")
-texture_pressed = ExtResource("10_jaika")
-texture_hover = ExtResource("10_ukj0f")
-texture_disabled = ExtResource("11_jaika")
-texture_click_mask = ExtResource("9_jaika")
+texture_normal = ExtResource("11_8dnf8")
+texture_pressed = ExtResource("12_a13el")
+texture_hover = ExtResource("13_g8xfv")
+texture_disabled = ExtResource("14_vnfpr")
 stretch_mode = 0
 
 [node name="glucose_level" type="Label" parent="Node" unique_id=1744235648]

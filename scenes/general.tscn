@@ -1,0 +1,516 @@
+[gd_scene format=3 uid="uid://cga6p4wcvqms1"]
+
+[ext_resource type="Script" uid="uid://wrfcdchx877d" path="res://scripts/general.gd" id="1_8jc6d"]
+[ext_resource type="Texture2D" uid="uid://d4ba486nqurbj" path="res://assets/growth1button.png" id="1_me28r"]
+[ext_resource type="Texture2D" uid="uid://dadg6k6kvohhq" path="res://assets/growth2button.png" id="2_tvxeb"]
+[ext_resource type="Texture2D" uid="uid://cmpdciohl8qum" path="res://assets/growth3button.png" id="3_tvt1q"]
+[ext_resource type="Texture2D" uid="uid://b8y6gdsun0kjs" path="res://assets/growth4button.png" id="4_2fsnt"]
+[ext_resource type="Texture2D" uid="uid://cddu78c5mwmh" path="res://assets/acth1button.png" id="5_e4sje"]
+[ext_resource type="Texture2D" uid="uid://df7dd0atnu0jr" path="res://assets/acth2button.png" id="6_oxm3m"]
+[ext_resource type="Texture2D" uid="uid://cvedjs8psu5cc" path="res://assets/acth3button.png" id="7_kp4ts"]
+[ext_resource type="Texture2D" uid="uid://psvbpeae0okk" path="res://assets/acth4button.png" id="8_3bdoe"]
+[ext_resource type="Texture2D" uid="uid://bmay72fw3lgr3" path="res://assets/adh1button.png" id="9_22s7e"]
+[ext_resource type="Texture2D" uid="uid://b7oq2jjqlpc8c" path="res://assets/adh2button.png" id="10_380ov"]
+[ext_resource type="Texture2D" uid="uid://cjfw0k3n60giy" path="res://assets/adh3button.png" id="11_al4n2"]
+[ext_resource type="Texture2D" uid="uid://bgslytfkcb7qj" path="res://assets/adh4button.png" id="12_8jc6d"]
+[ext_resource type="Texture2D" uid="uid://xeyar7i1x48p" path="res://assets/tsh1button.png" id="13_ra22a"]
+[ext_resource type="Texture2D" uid="uid://d0lodhugvm8ok" path="res://assets/tsh2button.png" id="14_a5yvw"]
+[ext_resource type="Texture2D" uid="uid://hmkss6qr4e82" path="res://assets/tsh3button.png" id="15_xuum8"]
+[ext_resource type="Texture2D" uid="uid://k16o2ya22t8b" path="res://assets/tsh4button.png" id="16_gcdas"]
+[ext_resource type="Texture2D" uid="uid://brkn6v4pjqou6" path="res://assets/pituitary.png" id="17_a7g7g"]
+[ext_resource type="Texture2D" uid="uid://dqpjp8iufu4hy" path="res://assets/thyroid.png" id="18_kajyh"]
+[ext_resource type="Texture2D" uid="uid://dss6q86tddbmo" path="res://assets/calcitonin1button.png" id="19_v2ajq"]
+[ext_resource type="Texture2D" uid="uid://cha5d5ioawem3" path="res://assets/calcitonin2button.png" id="20_4a8al"]
+[ext_resource type="Texture2D" uid="uid://4puie8cpb1dr" path="res://assets/calcitonin3button.png" id="21_ktl3u"]
+[ext_resource type="Texture2D" uid="uid://dggpt5p5hvlf0" path="res://assets/calcitonin4button.png" id="22_0txqb"]
+[ext_resource type="Texture2D" uid="uid://dlt0kejbs5cm1" path="res://assets/pthbutton1.png" id="23_w80bm"]
+[ext_resource type="Texture2D" uid="uid://d2tga3sac43wi" path="res://assets/pth2button.png" id="24_i16i5"]
+[ext_resource type="Texture2D" uid="uid://bxsjd0wdjpxec" path="res://assets/pth3button.png" id="25_sspgf"]
+[ext_resource type="Texture2D" uid="uid://dbd1d5wufr2ns" path="res://assets/pth4button.png" id="26_dkwpg"]
+[ext_resource type="Texture2D" uid="uid://c1s3xd5v8hkvv" path="res://assets/pancreas.png" id="28_ra22a"]
+[ext_resource type="Texture2D" uid="uid://boc4vldp2bgn8" path="res://assets/insulin1buttonmax.png" id="29_a5yvw"]
+[ext_resource type="Texture2D" uid="uid://b865o5m0n4wh6" path="res://assets/insulin2buttonmax.png" id="30_xuum8"]
+[ext_resource type="Texture2D" uid="uid://b6fsswiya66m2" path="res://assets/insulin3buttonmax.png" id="31_gcdas"]
+[ext_resource type="Texture2D" uid="uid://j2xsvofoh80e" path="res://assets/insulin4buttonmax.png" id="32_a7g7g"]
+[ext_resource type="Texture2D" uid="uid://c6vhobs7uwamn" path="res://assets/glucagon1buttonmax.png" id="33_kajyh"]
+[ext_resource type="Texture2D" uid="uid://cwhfuy20ten8b" path="res://assets/glucagon2buttonmax.png" id="34_v2ajq"]
+[ext_resource type="Texture2D" uid="uid://cmnati6e620uf" path="res://assets/glucagon3buttonmax.png" id="35_4a8al"]
+[ext_resource type="Texture2D" uid="uid://dx50c8gvrn7r3" path="res://assets/glucagon4buttonmax.png" id="36_ktl3u"]
+[ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="37_0txqb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbogg"]
+bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf3hb"]
+bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w80bm"]
+bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
+
+[node name="Node2D" type="Node2D" unique_id=947484268]
+script = ExtResource("1_8jc6d")
+
+[node name="pituitray" type="Node2D" parent="." unique_id=1770193675]
+
+[node name="Control" type="Control" parent="pituitray" unique_id=550679826]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="gh" type="TextureButton" parent="pituitray/Control" unique_id=2052726292]
+layout_mode = 0
+offset_left = 295.0
+offset_top = -19.999996
+offset_right = 2089.0
+offset_bottom = 545.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("1_me28r")
+texture_pressed = ExtResource("2_tvxeb")
+texture_hover = ExtResource("3_tvt1q")
+texture_disabled = ExtResource("4_2fsnt")
+
+[node name="acth" type="TextureButton" parent="pituitray/Control" unique_id=661666822]
+layout_mode = 0
+offset_left = 295.0
+offset_top = -96.0
+offset_right = 577.0
+offset_bottom = 56.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("5_e4sje")
+texture_pressed = ExtResource("6_oxm3m")
+texture_hover = ExtResource("7_kp4ts")
+texture_disabled = ExtResource("8_3bdoe")
+
+[node name="adh" type="TextureButton" parent="pituitray/Control" unique_id=649288863]
+layout_mode = 0
+offset_left = 299.0
+offset_top = 47.000004
+offset_right = 2093.0
+offset_bottom = 612.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("9_22s7e")
+texture_pressed = ExtResource("10_380ov")
+texture_hover = ExtResource("11_al4n2")
+texture_disabled = ExtResource("12_8jc6d")
+
+[node name="tsh" type="TextureButton" parent="pituitray/Control" unique_id=784328294]
+layout_mode = 0
+offset_left = 296.0
+offset_top = -161.0
+offset_right = 2090.0
+offset_bottom = 404.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("13_ra22a")
+texture_pressed = ExtResource("14_a5yvw")
+texture_hover = ExtResource("15_xuum8")
+texture_disabled = ExtResource("16_gcdas")
+
+[node name="Camera2D" type="Camera2D" parent="pituitray" unique_id=1899356882]
+
+[node name="pituitary" type="Sprite2D" parent="pituitray" unique_id=1782039178]
+position = Vector2(47.351135, -30.239994)
+scale = Vector2(0.40229633, 0.40229633)
+texture = ExtResource("17_a7g7g")
+
+[node name="Panel" type="Panel" parent="pituitray" unique_id=1802255149]
+visible = false
+z_index = -1
+offset_left = -581.0
+offset_top = -329.0
+offset_right = 586.0
+offset_bottom = 327.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cbogg")
+metadata/_edit_lock_ = true
+
+[node name="timer" type="Timer" parent="pituitray" unique_id=1780968358]
+wait_time = 7.0
+
+[node name="thyroid" type="Node2D" parent="." unique_id=1080716437]
+position = Vector2(0, 865)
+
+[node name="cooldown" type="Timer" parent="thyroid" unique_id=1710813963]
+wait_time = 2.0
+one_shot = true
+
+[node name="thyroid" type="Sprite2D" parent="thyroid" unique_id=1844836376]
+position = Vector2(27, 0)
+scale = Vector2(0.64988154, 0.64988154)
+texture = ExtResource("18_kajyh")
+
+[node name="Camera2D" type="Camera2D" parent="thyroid" unique_id=590183578]
+enabled = false
+
+[node name="Control" type="Control" parent="thyroid" unique_id=505424604]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="calcitonin" type="TextureButton" parent="thyroid/Control" unique_id=321136959]
+layout_mode = 0
+offset_left = 254.0
+offset_top = -51.000008
+offset_right = 2048.0
+offset_bottom = 514.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("19_v2ajq")
+texture_pressed = ExtResource("20_4a8al")
+texture_hover = ExtResource("21_ktl3u")
+texture_disabled = ExtResource("22_0txqb")
+
+[node name="parathormone" type="TextureButton" parent="thyroid/Control" unique_id=221597654]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 12.999996
+offset_right = 2048.0
+offset_bottom = 578.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("23_w80bm")
+texture_pressed = ExtResource("24_i16i5")
+texture_hover = ExtResource("25_sspgf")
+texture_disabled = ExtResource("26_dkwpg")
+
+[node name="Panel" type="Panel" parent="thyroid" unique_id=702764318]
+z_index = -1
+offset_left = -583.0
+offset_top = -330.0
+offset_right = 579.0
+offset_bottom = 341.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lf3hb")
+metadata/_edit_lock_ = true
+
+[node name="pancreas" type="Node2D" parent="." unique_id=1334421306]
+
+[node name="Pancreas" type="Sprite2D" parent="pancreas" unique_id=863849503]
+position = Vector2(-5.000002, 1908.4773)
+rotation = 0.12621231
+scale = Vector2(0.6594907, 0.65949076)
+texture = ExtResource("28_ra22a")
+
+[node name="Camera2D" type="Camera2D" parent="pancreas" unique_id=1263554501]
+position = Vector2(0, 1867.4773)
+enabled = false
+
+[node name="hormones" type="Node2D" parent="pancreas" unique_id=2119121841]
+position = Vector2(0, 1867.4773)
+
+[node name="Node" type="Control" parent="pancreas" unique_id=1118279275]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1867.4773
+offset_bottom = 1867.4773
+mouse_filter = 2
+
+[node name="insulin" type="TextureButton" parent="pancreas/Node" unique_id=1459100255]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 62.0
+offset_right = 2085.0
+offset_bottom = 627.0
+scale = Vector2(0.1, 0.1)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("29_a5yvw")
+texture_pressed = ExtResource("30_xuum8")
+texture_hover = ExtResource("31_gcdas")
+texture_disabled = ExtResource("32_a7g7g")
+stretch_mode = 5
+
+[node name="glucagon" type="TextureButton" parent="pancreas/Node" unique_id=827656411]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 125.0
+offset_right = 2085.0
+offset_bottom = 690.0
+scale = Vector2(0.1, 0.1)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("33_kajyh")
+texture_pressed = ExtResource("34_v2ajq")
+texture_hover = ExtResource("35_4a8al")
+texture_disabled = ExtResource("36_ktl3u")
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="pancreas" unique_id=1992685420]
+z_index = -1
+offset_left = -576.0
+offset_top = 1537.0
+offset_right = 577.0
+offset_bottom = 2193.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w80bm")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="." unique_id=116864904]
+offset_left = -247.0
+offset_top = 120.0
+offset_right = -129.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 96
+text = "▼"
+
+[node name="Button2" type="Button" parent="." unique_id=1319722827]
+offset_left = -305.0
+offset_top = 923.0
+offset_right = -187.0
+offset_bottom = 1111.0
+theme_override_font_sizes/font_size = 96
+text = "▼"
+
+[node name="Button3" type="Button" parent="." unique_id=2094907777]
+offset_left = 358.0
+offset_top = 1631.0
+offset_right = 476.0
+offset_bottom = 1819.0
+theme_override_font_sizes/font_size = 96
+text = "▲"
+
+[node name="Button4" type="Button" parent="." unique_id=11077976]
+offset_left = -300.0
+offset_top = 587.0
+offset_right = -182.0
+offset_bottom = 775.0
+theme_override_font_sizes/font_size = 96
+text = "▲"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1623918248]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=830548703]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -21.0
+offset_right = 40.0
+offset_bottom = 19.0
+scale = Vector2(0.814907, 0.814907)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1336177962]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 54.0
+offset_right = 368.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 39
+text = "Glucose Level"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control" unique_id=841628797]
+layout_mode = 0
+offset_left = 42.454285
+offset_top = 77.54574
+offset_right = 370.45428
+offset_bottom = 168.54572
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 70
+text = "110 mg"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control" unique_id=142727152]
+layout_mode = 0
+offset_left = 12.999999
+offset_top = 55.318596
+offset_right = 56.0
+offset_bottom = 164.31857
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 79
+text = "|"
+
+[node name="Control2" type="Control" parent="CanvasLayer" unique_id=711970610]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 90.0
+offset_right = 40.0
+offset_bottom = 130.0
+scale = Vector2(0.814907, 0.814907)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control2" unique_id=254971102]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 54.0
+offset_right = 368.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 39
+text = "Ca⁺² Level"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control2" unique_id=192207745]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = 368.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 63
+text = "7 mg"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control2" unique_id=519064688]
+layout_mode = 0
+offset_left = 12.999999
+offset_top = 62.68142
+offset_right = 56.0
+offset_bottom = 165.66312
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 74
+text = "|"
+
+[node name="Control3" type="Control" parent="CanvasLayer" unique_id=753810177]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 206.0
+offset_right = 40.0
+offset_bottom = 246.0
+scale = Vector2(0.814907, 0.814907)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control3" unique_id=132159372]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 54.0
+offset_right = 368.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 39
+text = "H₂O Level"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control3" unique_id=81965094]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = 368.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 60
+text = "100 %"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control3" unique_id=598130988]
+layout_mode = 0
+offset_left = 12.999999
+offset_top = 55.318604
+offset_right = 56.0
+offset_bottom = 164.3186
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 76
+text = "|"
+
+[node name="Control4" type="Control" parent="CanvasLayer" unique_id=1456735446]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 304.0
+offset_right = 40.0
+offset_bottom = 344.0
+scale = Vector2(0.814907, 0.814907)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control4" unique_id=1516609269]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 54.0
+offset_right = 368.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 39
+text = "Heart Rate"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control4" unique_id=1922182023]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = 368.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 57
+text = "80 bpm"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control4" unique_id=1804667643]
+layout_mode = 0
+offset_left = 12.999999
+offset_top = 56.545746
+offset_right = 56.0
+offset_bottom = 165.54575
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 76
+text = "|"
+
+[node name="Control5" type="Control" parent="CanvasLayer" unique_id=412707269]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 402.0
+offset_right = 40.0
+offset_bottom = 442.0
+scale = Vector2(0.814907, 0.814907)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control5" unique_id=1355282231]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 54.0
+offset_right = 368.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 39
+text = "Blood Pressure"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control5" unique_id=1174342511]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = 368.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 41
+text = "120/80 mmHg"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control5" unique_id=1768839024]
+layout_mode = 0
+offset_left = 12.999999
+offset_top = 55.318604
+offset_right = 56.0
+offset_bottom = 164.3186
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 76
+text = "|"
+
+[node name="Control6" type="Control" parent="CanvasLayer" unique_id=1138976942]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 500.0
+offset_right = 40.0
+offset_bottom = 540.0
+scale = Vector2(0.814907, 0.814907)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control6" unique_id=807918190]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 54.0
+offset_right = 368.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 39
+text = "BMR"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control6" unique_id=968689471]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = 368.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 41
+text = "100%"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control6" unique_id=1892328364]
+layout_mode = 0
+offset_left = 12.999999
+offset_top = 55.31848
+offset_right = 56.0
+offset_bottom = 164.31848
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 74
+text = "|"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button4_pressed"]
