@@ -64,6 +64,8 @@ func _process(delta: float) -> void:
 			return
 		elif glucose_level < 60:
 			score -= 3
+		elif glucose_level < 70:
+			score += 1
 		elif glucose_level < 110:
 			score += 2
 		elif glucose_level < 140:

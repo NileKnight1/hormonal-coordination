@@ -19,8 +19,8 @@ var ca_inc = [
 ]
 
 var ca_dec = [
-	["You're doing light exercise.", 6],
-	["You're doing intense exercise.", 4],
+	["You're doing light exercise.", 4],
+	["You're doing intense exercise.", 6],
 	["You have excessive urination.", 3],
 ]
 
@@ -84,8 +84,10 @@ func _process(delta: float) -> void:
 	if alive:
 		if score < 0:
 			return
-		elif calcium_level < 80:
+		elif calcium_level < 70:
 			score -= 3
+		elif calcium_level < 80:
+			score += 1
 		elif calcium_level < 105:
 			score += 2
 		elif calcium_level < 115:

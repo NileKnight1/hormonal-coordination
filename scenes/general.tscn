@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://cmnati6e620uf" path="res://assets/glucagon3buttonmax.png" id="35_4a8al"]
 [ext_resource type="Texture2D" uid="uid://dx50c8gvrn7r3" path="res://assets/glucagon4buttonmax.png" id="36_ktl3u"]
 [ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="37_0txqb"]
+[ext_resource type="Texture2D" uid="uid://by2hhul8n31tw" path="res://assets/949-9494109_brush-stroke.png" id="38_ra22a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbogg"]
 bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
@@ -510,6 +511,22 @@ offset_bottom = 164.31848
 theme_override_fonts/font = ExtResource("37_0txqb")
 theme_override_font_sizes/font_size = 74
 text = "|"
+
+[node name="bg" type="Sprite2D" parent="CanvasLayer" unique_id=241597514]
+visible = false
+position = Vector2(855.00006, 559.396)
+scale = Vector2(0.5309898, 0.36633682)
+texture = ExtResource("38_ra22a")
+
+[node name="Label4" type="Label" parent="CanvasLayer" unique_id=955687285]
+offset_left = 603.0
+offset_top = 518.0
+offset_right = 1061.0
+offset_bottom = 624.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 34
+autowrap_mode = 2
+justification_flags = 171
 
 [connection signal="timeout" from="1s" to="." method="_on_s_timeout"]
 [connection signal="pressed" from="pituitray/Control/tsh" to="." method="_on_tsh_pressed"]
