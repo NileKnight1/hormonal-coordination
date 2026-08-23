@@ -139,6 +139,7 @@ func _on_s_timeout() -> void:
 			#
 	#$Node/score.text = "Score: " + str(score/60)
 	#
+
 func death():
 	print("You're dead")
 	b1.disabled = 1

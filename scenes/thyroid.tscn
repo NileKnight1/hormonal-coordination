@@ -11,12 +11,27 @@
 [ext_resource type="Texture2D" uid="uid://d2tga3sac43wi" path="res://assets/pth2button.png" id="8_xyii0"]
 [ext_resource type="Texture2D" uid="uid://bxsjd0wdjpxec" path="res://assets/pth3button.png" id="9_sdcp7"]
 [ext_resource type="Texture2D" uid="uid://dbd1d5wufr2ns" path="res://assets/pth4button.png" id="10_u41yy"]
+[ext_resource type="AudioStream" uid="uid://bcr0ooramemnx" path="res://audio/fluid.mp3" id="12_aec05"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8g128"]
 bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aec05"]
+bg_color = Color(0, 0, 0, 0.7058824)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aec05"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_an0hf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxgbn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j710m"]
+
 [node name="Node2D" type="Node2D" unique_id=1121657011]
 script = ExtResource("1_5o43r")
+
+[node name="1s" type="Timer" parent="." unique_id=748834567]
+autostart = true
 
 [node name="general" type="Timer" parent="." unique_id=1086234025]
 wait_time = 15.0
@@ -63,37 +78,54 @@ texture_pressed = ExtResource("8_xyii0")
 texture_hover = ExtResource("9_sdcp7")
 texture_disabled = ExtResource("10_u41yy")
 
-[node name="calcium_level" type="Label" parent="Control" unique_id=1658676497]
+[node name="status" type="Label" parent="Control" unique_id=562806832]
 layout_mode = 0
-offset_left = -544.99994
-offset_top = -273.0
-offset_right = 451.00006
-offset_bottom = -124.0
-scale = Vector2(0.525, 0.525)
+offset_left = -541.0
+offset_top = 236.99998
+offset_right = 432.0
+offset_bottom = 344.0
+scale = Vector2(0.57, 0.57)
 theme_override_fonts/font = ExtResource("3_8jgsw")
-theme_override_font_sizes/font_size = 109
-text = "Blood Ca⁺²: 9.5 mg/dL"
+theme_override_font_sizes/font_size = 78
 
-[node name="status" type="Label" parent="Control" unique_id=755735251]
-layout_mode = 0
-offset_left = -511.0
-offset_top = 173.0
-offset_right = 637.0
-offset_bottom = 362.0
-scale = Vector2(0.535, 0.535)
-theme_override_font_sizes/font_size = 118
+[node name="Control2" type="Control" parent="Control" unique_id=1728116146]
+anchors_preset = 0
+offset_left = -548.0
+offset_top = -309.0
+offset_right = -508.0
+offset_bottom = -269.0
+scale = Vector2(0.814907, 0.814907)
 
-[node name="score" type="Label" parent="Control" unique_id=957233200]
+[node name="Label" type="Label" parent="Control/Control2" unique_id=243161860]
 layout_mode = 0
-offset_left = 179.0
-offset_top = -303.99997
-offset_right = 3635.0
-offset_bottom = 631.0
-scale = Vector2(0.11, 0.11)
+offset_left = 40.0
+offset_top = 54.0
+offset_right = 368.0
+offset_bottom = 123.0
 theme_override_fonts/font = ExtResource("3_8jgsw")
-theme_override_font_sizes/font_size = 758
-text = "Score: 000"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 39
+text = "Ca⁺² Level"
+
+[node name="Label2" type="Label" parent="Control/Control2" unique_id=1952226347]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = 368.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("3_8jgsw")
+theme_override_font_sizes/font_size = 63
+text = "8.5 mg"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Control2" unique_id=1104467736]
+layout_mode = 0
+offset_left = 12.999999
+offset_top = 62.68142
+offset_right = 56.0
+offset_bottom = 165.66312
+theme_override_fonts/font = ExtResource("3_8jgsw")
+theme_override_font_sizes/font_size = 74
+text = "|"
 
 [node name="Panel" type="Panel" parent="." unique_id=64223237]
 z_index = -1
@@ -105,7 +137,48 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8g128")
 metadata/_edit_lock_ = true
 
+[node name="bg" type="Panel" parent="." unique_id=367173424]
+visible = false
+offset_left = -584.0
+offset_top = -329.99997
+offset_right = 596.0
+offset_bottom = 333.00003
+theme_override_styles/panel = SubResource("StyleBoxFlat_aec05")
+
+[node name="score" type="Label" parent="." unique_id=373036203]
+offset_left = 207.0
+offset_top = -279.0
+offset_right = 3399.0
+offset_bottom = 493.0
+scale = Vector2(0.11, 0.11)
+theme_override_fonts/font = ExtResource("3_8jgsw")
+theme_override_font_sizes/font_size = 626
+text = "Score: 0"
+vertical_alignment = 1
+
+[node name="but" type="Button" parent="." unique_id=912021726]
+visible = false
+offset_left = -550.0
+offset_top = 226.0
+offset_right = -245.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.7479036, 0.32087067, 0.52911603, 1)
+theme_override_fonts/font = ExtResource("3_8jgsw")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxEmpty_aec05")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_an0hf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jxgbn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j710m")
+text = "Main Menu"
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1159319510]
+stream = ExtResource("12_aec05")
+autoplay = true
+parameters/looping = true
+
+[connection signal="timeout" from="1s" to="." method="_on_s_timeout"]
 [connection signal="timeout" from="general" to="." method="_on_general_timeout"]
 [connection signal="timeout" from="cooldown" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="Control/calcitonin" to="." method="_on_calcitonin_button_down"]
 [connection signal="button_down" from="Control/parathormone" to="." method="_on_parathormone_button_down"]
+[connection signal="pressed" from="but" to="." method="_on_but_pressed"]

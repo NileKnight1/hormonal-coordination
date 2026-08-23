@@ -178,9 +178,9 @@ offset_bottom = 333.00003
 theme_override_styles/panel = SubResource("StyleBoxFlat_8dnf8")
 
 [node name="score" type="Label" parent="." unique_id=1802543089]
-offset_left = 306.99997
+offset_left = 207.0
 offset_top = -279.0
-offset_right = 2485.0
+offset_right = 3399.0
 offset_bottom = 493.0
 scale = Vector2(0.11, 0.11)
 theme_override_fonts/font = ExtResource("5_8dnf8")
