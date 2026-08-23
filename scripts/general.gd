@@ -23,6 +23,13 @@ extends Node2D
 
 @onready var msg_bg = $CanvasLayer/bg
 @onready var msg_label = $CanvasLayer/Label4
+@onready var time_label = $CanvasLayer/Label5
+
+var elapsed_time = 0
+
+var dif = 1
+var extreme_count = 0
+var extreme_time = 0
 
 var extreme = Color(0x89000cff)
 var medium = Color(0xd1ff00ff)
@@ -36,32 +43,34 @@ var bp = 120
 var bmr = 100
 
 var events = [
-	["Human is eating a cucumber."		, 8, 0, 0, 0, 0, 0],
-	["Human is eating an apple."		, 8, 0, 0, 0, 0, 0],
-	["Human is eating some bread."		, 12, 0, 0, 0, 0, 0],
-	["Human is eating some pasta."		, 18, 0, 0, 0, 0, 0],
-	["Human is eating pizza."			, 35, 0, 0, 0, 0, 0],
-	["Human is eating a burger."		, 45, 0, 0, 0, 0, 0],
-	["Human is eating a piece of cake."	, 50, 0, 0, 0, 0, 0],
-	["Human is eating lots of candy."	, 60, 0, 0, 0, 0, 0],
+	["Human is eating a cucumber.",		8, 0, 0, 0, 0, 0],
+	["Human is eating an apple.",		8, 0, 0, 0, 0, 0],
+	["Human is eating some bread.", 	12, 0, 0, 0, 0, 0],
+	["Human is eating some pasta.",		18, 0, 0, 0, 0, 0],
+	["Human is eating pizza.",			35, 0, 0, 0, 0, 0],
+	["Human is eating a burger.",		45, 0, 0, 0, 0, 0],
+	["Human is eating a piece of cake.",50, 0, 0, 0, 0, 0],
+	["Human is eating lots of candy.",	60, 0, 0, 0, 0, 0],
 
-	["Human is drinking milk."				, 0, 6, 0, 0, 0, 0],
-	["Human is eating fish."				, 0, 4, 0, 0, 0, 0],
-	["Human is having cheese."				, 0, 3, 0, 0, 0, 0],
-	["Human is taking calcium supplement."	, 0, 8, 0, 0, 0, 0],
-	
-	["Human is drinking water.",		0, 0, 8, 0, 2, 0],
+	["Human is drinking milk.",					0, 6, 0, 0, 0, 0],
+	["Human is eating fish.",					0, 4, 0, 0, 0, 0],
+	["Human is having cheese.",					0, 3, 0, 0, 0, 0],
+	["Human is taking a calcium supplement.",	0, 8, 0, 0, 0, 0],
+
+	["Human is drinking water.",		0, 0, 8, 0, 0, 0],
 	["Human is sweating heavily.",		0, 0, -15, 0, -5, 0],
-	["Human urinated excessively.",		0, -3, -12, 0, -4, 0],
-	
-	["Human is taking a walk.",	-		-5, -1, 0, 5, 3, 2],
-	["Human is carying heavy bags.", 	-8, -2, 0, 10, 5, 3],
-	["Human is doing intense exercise.", -20, -6, 0, 25, 12, 8],
-	
-	["Human entered a cold environment.", 0, 0, 0, 0, 0, -8],
-	
-	["Experienced sudden fear.", 8, 0, 0, 20, 12, 5],
-	
+	["Human is urinating excessively.",	0, -3, -12, 0, -4, 0],
+
+	["Human is resting for a long time.",0, 0, 0, -10, -5, 0],
+	["Human is sleeping.",				0, 0, 0, -8, -3, -2],
+	["Human is very relaxed.",			0, 0, 0, -5, -2, 0],
+
+	["Human has lost some blood.",	0, 0, -3, -5, -15, 0],
+	["Human is dehydrated.",		0, 0, -10, -3, -8, 0],
+
+	["Human entered a cold environment.",		0, 0, 0, 0, 0, -10],
+	["Human has been inactive for a long time.",0, 0, 0, 0, 0, -8],
+	["Human is fasting for a long time.",		-10, 0, 0, 0, 0, -5],
 ]
 
 
@@ -70,15 +79,21 @@ var events = [
 
 
 func _ready() -> void:
+	#global.reset_scores()
 	await get_tree().create_timer(3).timeout
-	show_msg("Human is playing minecraft.")
+	
+	
+	
+	#show_msg("Human is playing minecraft.")
+	run()
 
 
 func _process(delta: float) -> void:
 	pass
-	
 
 func _on_s_timeout() -> void:
+	extreme_count = 0
+	
 	label_glucose.text = str(glucose) + " mg"
 	label_calcium.text = str(calcium/10) + " mg"
 	label_water.text = str(water) + " %"
@@ -88,6 +103,7 @@ func _on_s_timeout() -> void:
 	
 	if glucose < 60:
 		line_glucose.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
 	elif glucose < 70:
 		line_glucose.add_theme_color_override("font_color", medium)
 		
@@ -98,9 +114,13 @@ func _on_s_timeout() -> void:
 		line_glucose.add_theme_color_override("font_color", medium)
 	else:
 		line_glucose.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+		
 
 	if calcium < 70:
 		line_calcium.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+		
 	elif calcium < 80:
 		line_calcium.add_theme_color_override("font_color", medium)
 	elif calcium < 105:
@@ -109,6 +129,97 @@ func _on_s_timeout() -> void:
 		line_calcium.add_theme_color_override("font_color", medium)
 	else:
 		line_calcium.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+		
+
+	if water < 80:
+		line_water.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+		
+	elif water < 90:
+		line_water.add_theme_color_override("font_color", medium)
+	elif water < 110:
+		line_water.add_theme_color_override("font_color", perfect)
+	elif water < 120:
+		line_water.add_theme_color_override("font_color", medium)
+	else:
+		line_water.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+		
+		
+	if hr < 50:
+		line_hr.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+		
+	elif hr < 60:
+		line_hr.add_theme_color_override("font_color", medium)
+	elif hr < 100:
+		line_hr.add_theme_color_override("font_color", perfect)
+	elif hr < 120:
+		line_hr.add_theme_color_override("font_color", medium)
+	else:
+		line_hr.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+		
+		
+	if bp < 90:
+		line_bp.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+		
+	elif bp < 100:
+		line_bp.add_theme_color_override("font_color", medium)
+	elif bp < 130:
+		line_bp.add_theme_color_override("font_color", perfect)
+	elif bp < 140:
+		line_bp.add_theme_color_override("font_color", medium)
+	else:
+		line_bp.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+		
+		
+	if bmr < 80:
+		line_bmr.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+		
+	elif bmr < 90:
+		line_bmr.add_theme_color_override("font_color", medium)
+	elif bmr < 110:
+		line_bmr.add_theme_color_override("font_color", perfect)
+	elif bmr < 120:
+		line_bmr.add_theme_color_override("font_color", medium)
+	else:
+		line_bmr.add_theme_color_override("font_color", extreme)
+		extreme_count += 1
+	
+	#print (extreme_time)
+	
+	if extreme_count > (dif -1):
+		extreme_time += 1
+	else:
+		extreme_time = 0
+	
+	if extreme_time > 4:
+		end_game()
+	
+	elapsed_time += 1
+	var mins = elapsed_time / 60
+	var seconds = elapsed_time - (mins*60)
+	var hours = mins / 60
+	mins = mins - (hours*60) 
+	
+	
+	time_label.text = "Elapsed Time: "
+	if hours < 10:
+		time_label.text += "0"
+	time_label.text +=  str(hours) + ":"
+	if mins < 10:
+		time_label.text += "0"
+	time_label.text +=  str(mins) + ":"
+	if seconds < 10:
+		time_label.text += "0"
+	time_label.text +=  str(seconds)
+	
+
 
 func _on_button_pressed() -> void:
 	cam_pituitary.enabled = 0
@@ -136,7 +247,7 @@ func _on_acth_pressed() -> void:
 	water += 1
 	hr += 1
 	bp += 3
-	bmr += 2
+	#bmr += 2
 
 func _on_gh_pressed() -> void:
 	glucose += 2
@@ -159,7 +270,12 @@ func _on_insulin_pressed() -> void:
 
 func _on_glucagon_pressed() -> void:
 	glucose += 4
-	
+
+func _on_adrenaline_pressed() -> void:
+	glucose += 8
+	hr += 15
+	bp += 10
+
 func show_msg(msg):
 	msg_bg.visible = 1
 	msg_label.text = msg
@@ -181,3 +297,25 @@ func show_msg(msg):
 	
 	msg_bg.visible = 0
 	msg_label.text = ""
+
+
+func run():
+	
+	while 1:
+		var tempx = randi_range(0, len(events)-1)
+		event(events[tempx])
+		await get_tree().create_timer(5).timeout
+	
+	
+func event(event):
+	show_msg(event[0])
+	glucose += event[1]
+	calcium += event[2]
+	water += event[3]
+	hr += event[4]
+	bp += event[5]
+	bmr += event[6]
+	
+func end_game():
+	print("dead")
+	global.update_scores("general", elapsed_time)

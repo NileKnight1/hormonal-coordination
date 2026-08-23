@@ -1,15 +1,54 @@
 [gd_scene format=3 uid="uid://dvdipe7pqjjw8"]
 
 [ext_resource type="Script" uid="uid://dcmratvqh24v8" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://defthij8apig1" path="res://assets/images.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://b1ppcwviajdrt" path="res://assets/images__1_-removebg-preview.png" id="3_wu84c"]
+[ext_resource type="Texture2D" uid="uid://ba0cskreefmgv" path="res://assets/images__2_-removebg-preview.png" id="4_wu84c"]
+[ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="5_8ln24"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ln24"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu84c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqqt6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rtw2f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa1go"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbmy8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jk1qb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dd4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgwnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flqon"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcqid"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="main menu" type="Node2D" unique_id=400296325]
 script = ExtResource("1_l6cm7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1692501070]
 
+[node name="Images" type="Sprite2D" parent="CanvasLayer" unique_id=839491991]
+position = Vector2(570.23456, 330)
+scale = Vector2(2.0432096, 2.04321)
+texture = ExtResource("2_bqqt6")
+
 [node name="main" type="Control" parent="CanvasLayer" unique_id=879933139]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="bg" type="Sprite2D" parent="CanvasLayer/main" unique_id=1292705122]
+position = Vector2(585.75, 171)
+scale = Vector2(1.010232, 1)
+texture = ExtResource("3_wu84c")
 
 [node name="glands_" type="Button" parent="CanvasLayer/main" unique_id=446215829]
 layout_mode = 0
@@ -18,67 +57,279 @@ offset_top = 117.0
 offset_right = 1074.0
 offset_bottom = 272.0
 scale = Vector2(0.545, 0.545)
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.48235294, 0.38431373, 0.43529412, 1)
 theme_override_font_sizes/font_size = 107
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8ln24")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rtw2f")
 text = "Play as Gland"
+
+[node name="bg2" type="Sprite2D" parent="CanvasLayer/main" unique_id=1547951471]
+position = Vector2(585.75, 316)
+scale = Vector2(1.010232, 1)
+texture = ExtResource("3_wu84c")
+
+[node name="glands_2" type="Button" parent="CanvasLayer/main" unique_id=2127431517]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 262.0
+offset_right = 1074.0
+offset_bottom = 417.0
+scale = Vector2(0.545, 0.545)
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0.48235294, 0.38431373, 0.43529412, 1)
+theme_override_font_sizes/font_size = 107
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8ln24")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bqqt6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rtw2f")
+text = "Highes Scores"
 
 [node name="glands" type="Control" parent="CanvasLayer" unique_id=1669411007]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 
+[node name="bg2" type="Sprite2D" parent="CanvasLayer/glands" unique_id=265898643]
+position = Vector2(573, 141)
+scale = Vector2(0.6183955, 0.6121323)
+texture = ExtResource("3_wu84c")
+
+[node name="bg3" type="Sprite2D" parent="CanvasLayer/glands" unique_id=499558299]
+position = Vector2(573, 218)
+scale = Vector2(0.6183955, 0.6121323)
+texture = ExtResource("3_wu84c")
+
+[node name="bg4" type="Sprite2D" parent="CanvasLayer/glands" unique_id=1503910842]
+position = Vector2(573, 296)
+rotation = -0.0079301
+scale = Vector2(0.6183955, 0.6121323)
+texture = ExtResource("3_wu84c")
+
+[node name="bg5" type="Sprite2D" parent="CanvasLayer/glands" unique_id=1264027923]
+position = Vector2(573, 376)
+rotation = -0.0079301
+scale = Vector2(0.6183955, 0.6121323)
+texture = ExtResource("3_wu84c")
+
+[node name="bg6" type="Sprite2D" parent="CanvasLayer/glands" unique_id=1173985260]
+position = Vector2(573, 451.00003)
+rotation = -0.0079301
+scale = Vector2(0.6183955, 0.6121323)
+texture = ExtResource("3_wu84c")
+
+[node name="Images2RemovebgPreview" type="Sprite2D" parent="CanvasLayer/glands" unique_id=40741756]
+position = Vector2(234.56252, 514.5625)
+scale = Vector2(0.56124157, 0.40072715)
+texture = ExtResource("4_wu84c")
+
 [node name="pancreas" type="Button" parent="CanvasLayer/glands" unique_id=1582992296]
 layout_mode = 0
-offset_left = 453.99997
-offset_top = 134.99998
-offset_right = 827.0
-offset_bottom = 257.0
+offset_left = 464.0
+offset_top = 96.0
+offset_right = 837.0
+offset_bottom = 218.00002
 scale = Vector2(0.58, 0.58)
+theme_override_colors/font_hover_color = Color(0.48142892, 0.383729, 0.43473414, 1)
 theme_override_font_sizes/font_size = 83
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jk1qb")
 text = "Pancreas"
 
-[node name="thymus" type="Button" parent="CanvasLayer/glands" unique_id=382769793]
+[node name="pituitary" type="Button" parent="CanvasLayer/glands" unique_id=382769793]
 layout_mode = 0
-offset_left = 187.99994
-offset_top = 252.00002
-offset_right = 561.0
-offset_bottom = 374.00003
+offset_left = 461.0
+offset_top = 327.0
+offset_right = 834.0001
+offset_bottom = 449.0
 scale = Vector2(0.58, 0.58)
+theme_override_colors/font_hover_color = Color(0.48142892, 0.383729, 0.43473414, 1)
 theme_override_font_sizes/font_size = 83
-text = "Thymus"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jk1qb")
+text = "Pituitary"
 
 [node name="adrenal" type="Button" parent="CanvasLayer/glands" unique_id=739776649]
 layout_mode = 0
-offset_left = 189.99994
-offset_top = 122.0
-offset_right = 563.0
-offset_bottom = 244.00002
+offset_left = 461.00006
+offset_top = 250.00002
+offset_right = 834.0001
+offset_bottom = 372.0
 scale = Vector2(0.58, 0.58)
+theme_override_colors/font_hover_color = Color(0.48142892, 0.383729, 0.43473414, 1)
 theme_override_font_sizes/font_size = 83
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jk1qb")
 text = "Adrenal"
 
 [node name="thyroid" type="Button" parent="CanvasLayer/glands" unique_id=716993930]
 layout_mode = 0
-offset_left = 690.0
-offset_top = 228.0
-offset_right = 1063.0
-offset_bottom = 350.0
+offset_left = 462.0
+offset_top = 173.0
+offset_right = 835.0
+offset_bottom = 295.0
 scale = Vector2(0.58, 0.58)
+theme_override_colors/font_hover_color = Color(0.48142892, 0.383729, 0.43473414, 1)
 theme_override_font_sizes/font_size = 83
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jk1qb")
 text = "Thyroid"
+
+[node name="general" type="Button" parent="CanvasLayer/glands" unique_id=239390385]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 405.0
+offset_right = 832.0001
+offset_bottom = 527.0
+scale = Vector2(0.58, 0.58)
+theme_override_colors/font_hover_color = Color(0.48142892, 0.383729, 0.43473414, 1)
+theme_override_font_sizes/font_size = 83
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jk1qb")
+text = "General
+"
 
 [node name="back" type="Button" parent="CanvasLayer/glands" unique_id=1679700425]
 layout_mode = 0
-offset_left = 127.99994
-offset_top = 473.00003
-offset_right = 500.99997
-offset_bottom = 595.0
+offset_left = 125.0
+offset_top = 479.0
+offset_right = 498.00003
+offset_bottom = 601.0
 scale = Vector2(0.58, 0.58)
+theme_override_colors/font_hover_color = Color(0.48235294, 0.38431373, 0.43529412, 1)
 theme_override_font_sizes/font_size = 83
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5dd4i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lgwnu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flqon")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rcqid")
 text = "Back"
 
+[node name="scores" type="Control" parent="CanvasLayer" unique_id=1434335035]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 570.0
+offset_top = 321.0
+offset_right = 610.0
+offset_bottom = 361.0
+
+[node name="pancreas" type="Label" parent="CanvasLayer/scores" unique_id=301545280]
+layout_mode = 0
+offset_left = -147.0
+offset_top = -226.99998
+offset_right = 2894.0
+offset_bottom = 524.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.73124737, 0.7549101, 0.9337793, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 609
+text = "Pancreas: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="thyroid" type="Label" parent="CanvasLayer/scores" unique_id=218890009]
+layout_mode = 0
+offset_left = -145.0
+offset_top = -164.0
+offset_right = 2896.0
+offset_bottom = 587.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.73124737, 0.7549101, 0.9337793, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 609
+text = "Thyroid: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="pituitary" type="Label" parent="CanvasLayer/scores" unique_id=607921783]
+layout_mode = 0
+offset_left = -145.0
+offset_top = -35.000015
+offset_right = 2896.0
+offset_bottom = 716.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.73124737, 0.7549101, 0.9337793, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 609
+text = "Pituitary: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="adrenal" type="Label" parent="CanvasLayer/scores" unique_id=280501011]
+layout_mode = 0
+offset_left = -145.0
+offset_top = -100.0
+offset_right = 2896.0
+offset_bottom = 651.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.73124737, 0.7549101, 0.9337793, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 609
+text = "Adrenal: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="general" type="Label" parent="CanvasLayer/scores" unique_id=1696222526]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.7749999
+anchor_bottom = 1.775
+offset_left = -145.0
+offset_top = -35.0
+offset_right = 2896.0
+offset_bottom = 716.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0.73124737, 0.7549101, 0.9337793, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 609
+text = "General: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Images2RemovebgPreview" type="Sprite2D" parent="CanvasLayer/scores" unique_id=1489373272]
+position = Vector2(-334.5625, 192.5625)
+scale = Vector2(0.56124157, 0.40072715)
+texture = ExtResource("4_wu84c")
+
+[node name="back" type="Button" parent="CanvasLayer/scores" unique_id=1614334746]
+layout_mode = 0
+offset_left = -444.12506
+offset_top = 156.99997
+offset_right = -71.12503
+offset_bottom = 278.99997
+scale = Vector2(0.58, 0.58)
+theme_override_colors/font_hover_color = Color(0.48235294, 0.38431373, 0.43529412, 1)
+theme_override_font_sizes/font_size = 83
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5dd4i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lgwnu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_flqon")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rcqid")
+text = "Back"
+
+[node name="bg" type="Panel" parent="CanvasLayer" unique_id=540660796]
+visible = false
+offset_right = 1154.0
+offset_bottom = 663.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
+
 [connection signal="button_down" from="CanvasLayer/main/glands_" to="." method="_on_glands_button_down"]
+[connection signal="button_down" from="CanvasLayer/main/glands_2" to="." method="_on_scores_button_down"]
 [connection signal="button_down" from="CanvasLayer/glands/pancreas" to="." method="_on_pancreas_button_down"]
-[connection signal="button_down" from="CanvasLayer/glands/thymus" to="." method="_on_thymus_button_down"]
+[connection signal="button_down" from="CanvasLayer/glands/pituitary" to="." method="_on_pituitary_button_down"]
 [connection signal="button_down" from="CanvasLayer/glands/adrenal" to="." method="_on_adrenal_button_down"]
 [connection signal="button_down" from="CanvasLayer/glands/thyroid" to="." method="_on_thyroid_button_down"]
+[connection signal="button_down" from="CanvasLayer/glands/general" to="." method="_on_general_button_down"]
 [connection signal="button_down" from="CanvasLayer/glands/back" to="." method="_on_back_button_down"]
+[connection signal="pressed" from="CanvasLayer/scores/back" to="." method="_on_back_button_down"]

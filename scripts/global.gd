@@ -5,7 +5,7 @@ var scores = {
 	"pancreas": 0,
 	"adrenal": 0,
 	"pituitary": 0,
-	
+	"general": 0,
 }
 
 func reset_scores():
@@ -14,7 +14,10 @@ func reset_scores():
 		"pancreas": 0,
 		"adrenal": 0,
 		"pituitary": 0,
+		"general": 0,
 }
+
+	save_scores()
 
 func update_scores(key, score):
 	#scores[0][1] = max(scores[0][1], score)
@@ -25,6 +28,7 @@ func update_scores(key, score):
 	#print(score)
 	#print(scores[key])
 	scores[key] = max(scores[key], score)
+	save_scores()
 
 
 

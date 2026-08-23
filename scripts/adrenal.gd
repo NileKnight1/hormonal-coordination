@@ -69,7 +69,7 @@ func death():
 	global.update_scores("adrenal", score)
 	adrenaline.disabled = 1
 	
-	global.save_scores()
+	#global.save_scores()
 	
 func failure():
 	print("You've failed.")

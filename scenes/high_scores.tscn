@@ -6,8 +6,6 @@
 [node name="Node2D" type="Node2D" unique_id=1491689388]
 script = ExtResource("1_3582i")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=834756649]
-
 [node name="pancreas" type="Label" parent="." unique_id=431872471]
 offset_left = -147.0
 offset_top = -226.99998
@@ -19,6 +17,7 @@ theme_override_font_sizes/font_size = 609
 text = "Pancreas: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="thyroid" type="Label" parent="." unique_id=605239678]
 offset_left = -145.0
@@ -31,6 +30,7 @@ theme_override_font_sizes/font_size = 609
 text = "Thyroid: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="pituitary" type="Label" parent="." unique_id=722630457]
 offset_left = -145.0
@@ -43,6 +43,7 @@ theme_override_font_sizes/font_size = 609
 text = "Pituitary: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="adrenal" type="Label" parent="." unique_id=484345672]
 offset_left = -145.0
@@ -55,3 +56,4 @@ theme_override_font_sizes/font_size = 609
 text = "Adrenal: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

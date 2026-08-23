@@ -71,7 +71,7 @@ func death():
 	b1.disabled = 1
 	b2.disabled = 1
 	
-	global.save_scores()
+	#global.save_scores()
 
 
 func _ready() -> void:

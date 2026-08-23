@@ -234,6 +234,20 @@ texture_hover = ExtResource("35_4a8al")
 texture_disabled = ExtResource("36_ktl3u")
 stretch_mode = 0
 
+[node name="glucagon2" type="TextureButton" parent="pancreas/Node" unique_id=648324177]
+layout_mode = 0
+offset_left = 320.0
+offset_top = -81.477264
+offset_right = 2114.0
+offset_bottom = 483.52274
+scale = Vector2(0.1, 0.1)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("33_kajyh")
+texture_pressed = ExtResource("34_v2ajq")
+texture_hover = ExtResource("35_4a8al")
+texture_disabled = ExtResource("36_ktl3u")
+stretch_mode = 0
+
 [node name="Panel" type="Panel" parent="pancreas" unique_id=1992685420]
 z_index = -1
 offset_left = -576.0
@@ -528,6 +542,18 @@ theme_override_font_sizes/font_size = 34
 autowrap_mode = 2
 justification_flags = 171
 
+[node name="Label5" type="Label" parent="CanvasLayer" unique_id=339492117]
+offset_left = 678.0
+offset_top = 28.0
+offset_right = 1136.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 42
+text = "Elapsed Time: 00:00:00"
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 171
+
 [connection signal="timeout" from="1s" to="." method="_on_s_timeout"]
 [connection signal="pressed" from="pituitray/Control/tsh" to="." method="_on_tsh_pressed"]
 [connection signal="pressed" from="pituitray/Control/acth" to="." method="_on_acth_pressed"]
@@ -537,6 +563,7 @@ justification_flags = 171
 [connection signal="pressed" from="thyroid/Control/parathormone" to="." method="_on_parathormone_pressed"]
 [connection signal="pressed" from="pancreas/Node/insulin" to="." method="_on_insulin_pressed"]
 [connection signal="pressed" from="pancreas/Node/glucagon" to="." method="_on_glucagon_pressed"]
+[connection signal="pressed" from="pancreas/Node/glucagon2" to="." method="_on_adrenaline_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button3_pressed"]

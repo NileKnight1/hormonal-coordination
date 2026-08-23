@@ -7,10 +7,11 @@ extends Node2D
 @onready var b1 = $Node/insulin
 @onready var b2 = $Node/glucagon
 @onready var hormones = $hormones
+@onready var music = $music
 
 var insulin_scripts = preload("res://scripts/pancreas_insulin.gd")
 var glucagon_scripts = preload("res://scripts/pancreas_insulin.gd")
-
+#var bg_music = preload("res://audio/fluid.mp3")
 
 
 var waiting_time = 10
@@ -52,8 +53,10 @@ var actions = [
 
 func _ready() -> void:
 	glucose_change(0, 1)
+	music.play()
 	#print(global.scores)[[[[[
 	await get_tree().create_timer(5).timeout
+	
 	
 	run()
 
@@ -86,7 +89,7 @@ func death():
 	global.update_scores("pancreas", score/60)
 	
 	print(global.scores)
-	global.save_scores()
+	#global.save_scores()
 
 func run():
 	while alive:
