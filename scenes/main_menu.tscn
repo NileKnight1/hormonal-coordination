@@ -31,6 +31,20 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ajci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b55j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pajh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7ex8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hstxw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8egab"]
+
 [node name="main menu" type="Node2D" unique_id=400296325]
 script = ExtResource("1_l6cm7")
 
@@ -324,6 +338,187 @@ offset_right = 1154.0
 offset_bottom = 663.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
 
+[node name="count" type="Label" parent="CanvasLayer" unique_id=863710712]
+visible = false
+offset_left = 521.0
+offset_top = 114.0
+offset_right = 631.0
+offset_bottom = 366.0
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 204
+text = "3"
+
+[node name="la" type="Label" parent="CanvasLayer" unique_id=1987878636]
+visible = false
+offset_left = 450.0
+offset_top = 593.0
+offset_right = 8958.0
+offset_bottom = 1344.0
+scale = Vector2(0.027923292, 0.027923292)
+theme_override_colors/font_color = Color(0.73124737, 0.7549101, 0.9337793, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 609
+text = "Press anywhere to view tutorial."
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="tut" type="Button" parent="CanvasLayer" unique_id=774860135]
+visible = false
+offset_right = 8.0
+offset_bottom = 23.0
+scale = Vector2(221.89253, 76.37623)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+text = "r"
+
+[node name="tutorials" type="Control" parent="CanvasLayer" unique_id=719739135]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="pancreas" type="Control" parent="CanvasLayer/tutorials" unique_id=1341936248]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/tutorials/pancreas" unique_id=1815320297]
+layout_mode = 0
+offset_left = 382.00003
+offset_top = 12.000004
+offset_right = 1225.0
+offset_bottom = 277.0
+scale = Vector2(0.44337946, 0.44337946)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Pancreas"
+
+[node name="Label2" type="Label" parent="CanvasLayer/tutorials/pancreas" unique_id=2127082623]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 147.0
+offset_right = 943.0
+offset_bottom = 412.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Gameplay"
+
+[node name="Label4" type="Label" parent="CanvasLayer/tutorials/pancreas" unique_id=1919776131]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 147.0
+offset_right = 1328.0
+offset_bottom = 412.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Difficulty"
+
+[node name="Label3" type="Label" parent="CanvasLayer/tutorials/pancreas" unique_id=858575256]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 206.0
+offset_right = 1707.9856
+offset_bottom = 1985.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "An event happens each some seconds changing \"glucose\" level, either increasing or decreasing it.
+
+You have two hormones to achieve homestasis of glucose, \"Insulin\" and \"Glucagon\", insulin decreases the glucose level, while glucagon increases it."
+autowrap_mode = 2
+max_lines_visible = 12
+
+[node name="Label5" type="Label" parent="CanvasLayer/tutorials/pancreas" unique_id=1008507174]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 206.0
+offset_right = 2092.9856
+offset_bottom = 689.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "Difficulty increases with time, which decreases time between each event and other."
+autowrap_mode = 2
+
+[node name="Label8" type="Label" parent="CanvasLayer/tutorials/pancreas" unique_id=410776742]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 325.0
+offset_right = 1328.0
+offset_bottom = 590.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Scoring"
+
+[node name="Label9" type="Label" parent="CanvasLayer/tutorials/pancreas" unique_id=1863270920]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 384.0
+offset_right = 2092.9856
+offset_bottom = 1191.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "There are three zones of scoring:
+extreme: -3/sec
+med: +1/sec
+perfect: +2/sec"
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="CanvasLayer/tutorials/pancreas" unique_id=739016242]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 143.0
+offset_right = 1721.0
+offset_bottom = 408.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Death"
+
+[node name="Label7" type="Label" parent="CanvasLayer/tutorials/pancreas" unique_id=1336762057]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 202.0
+offset_right = 2364.5583
+offset_bottom = 685.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "If glucose level reaches 60 or 300 you die."
+autowrap_mode = 2
+
+[node name="play" type="Button" parent="CanvasLayer/tutorials/pancreas" unique_id=1852887887]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 540.0
+offset_right = 1084.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.7479036, 0.32087067, 0.52911603, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a8gd2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hstxw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8egab")
+text = "Play "
+
 [connection signal="button_down" from="CanvasLayer/main/glands_" to="." method="_on_glands_button_down"]
 [connection signal="button_down" from="CanvasLayer/main/glands_2" to="." method="_on_scores_button_down"]
 [connection signal="button_down" from="CanvasLayer/glands/pancreas" to="." method="_on_pancreas_button_down"]
@@ -333,3 +528,5 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
 [connection signal="button_down" from="CanvasLayer/glands/general" to="." method="_on_general_button_down"]
 [connection signal="button_down" from="CanvasLayer/glands/back" to="." method="_on_back_button_down"]
 [connection signal="pressed" from="CanvasLayer/scores/back" to="." method="_on_back_button_down"]
+[connection signal="pressed" from="CanvasLayer/tut" to="." method="_on_tut_pressed"]
+[connection signal="pressed" from="CanvasLayer/tutorials/pancreas/play" to="." method="_on_play_pressed"]

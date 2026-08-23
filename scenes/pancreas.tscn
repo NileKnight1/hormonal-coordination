@@ -58,7 +58,7 @@ offset_bottom = 3.0
 scale = Vector2(0.11, 0.11)
 theme_override_fonts/font = ExtResource("5_8dnf8")
 theme_override_font_sizes/font_size = 626
-text = "Score: 1000"
+text = "Score: 0"
 vertical_alignment = 1
 
 [node name="status" type="Label" parent="Node" unique_id=1936103788]
@@ -98,16 +98,44 @@ texture_hover = ExtResource("13_g8xfv")
 texture_disabled = ExtResource("14_vnfpr")
 stretch_mode = 0
 
-[node name="glucose_level" type="Label" parent="Node" unique_id=1744235648]
+[node name="Control" type="Control" parent="Node" unique_id=830584584]
+anchors_preset = 0
+offset_left = -548.0
+offset_top = -329.0
+offset_right = -508.0
+offset_bottom = -289.0
+scale = Vector2(0.814907, 0.814907)
+
+[node name="Label" type="Label" parent="Node/Control" unique_id=24157045]
 layout_mode = 0
-offset_left = -536.0
-offset_top = -291.0
-offset_right = -319.0
-offset_bottom = -239.0
-scale = Vector2(0.545, 0.545)
+offset_left = 40.0
+offset_top = 54.0
+offset_right = 368.0
+offset_bottom = 123.0
 theme_override_fonts/font = ExtResource("5_8dnf8")
-theme_override_font_sizes/font_size = 88
-text = "Glucose level: 85"
+theme_override_font_sizes/font_size = 39
+text = "Glucose Level"
+
+[node name="Label2" type="Label" parent="Node/Control" unique_id=1600813875]
+layout_mode = 0
+offset_left = 42.454285
+offset_top = 77.54574
+offset_right = 370.45428
+offset_bottom = 168.54572
+theme_override_fonts/font = ExtResource("5_8dnf8")
+theme_override_font_sizes/font_size = 70
+text = "85 mg"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Node/Control" unique_id=1912133439]
+layout_mode = 0
+offset_left = 12.999999
+offset_top = 55.318596
+offset_right = 56.0
+offset_bottom = 164.31857
+theme_override_fonts/font = ExtResource("5_8dnf8")
+theme_override_font_sizes/font_size = 79
+text = "|"
 
 [node name="Panel" type="Panel" parent="." unique_id=857130813]
 z_index = -1

@@ -74,7 +74,7 @@ func _process(delta: float) -> void:
 		elif glucose_level < 140:
 			score += 1
 		else:
-			score -= 2
+			score -= 3
 			
 	$Node/score.text = "Score: " + str(score/60)
 	
