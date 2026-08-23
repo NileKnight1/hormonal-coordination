@@ -18,6 +18,17 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3nsg"]
 bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dnf8"]
+bg_color = Color(0, 0, 0, 0.7058824)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dnf8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a13el"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8xfv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnfpr"]
+
 [node name="Node2D" type="Node2D" unique_id=457058763]
 script = ExtResource("1_c3nsg")
 
@@ -54,6 +65,7 @@ anchors_preset = 0
 mouse_filter = 2
 
 [node name="score" type="Label" parent="Node" unique_id=1648737629]
+visible = false
 layout_mode = 0
 offset_left = 281.0
 offset_top = -285.0
@@ -80,7 +92,6 @@ offset_bottom = 344.0
 scale = Vector2(0.57, 0.57)
 theme_override_fonts/font = ExtResource("5_8dnf8")
 theme_override_font_sizes/font_size = 78
-text = "You're eating a piece of cake."
 
 [node name="insulin" type="TextureButton" parent="Node" unique_id=1374812601]
 layout_mode = 0
@@ -158,11 +169,48 @@ offset_bottom = 326.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c3nsg")
 
+[node name="bg" type="Panel" parent="." unique_id=811775916]
+visible = false
+offset_left = -584.0
+offset_top = -329.99997
+offset_right = 596.0
+offset_bottom = 333.00003
+theme_override_styles/panel = SubResource("StyleBoxFlat_8dnf8")
+
+[node name="score" type="Label" parent="." unique_id=1802543089]
+offset_left = 306.99997
+offset_top = -279.0
+offset_right = 2485.0
+offset_bottom = 493.0
+scale = Vector2(0.11, 0.11)
+theme_override_fonts/font = ExtResource("5_8dnf8")
+theme_override_font_sizes/font_size = 626
+text = "Score: 0"
+vertical_alignment = 1
+
+[node name="but" type="Button" parent="." unique_id=1770825821]
+visible = false
+offset_left = -550.0
+offset_top = 226.0
+offset_right = -245.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.7479036, 0.32087067, 0.52911603, 1)
+theme_override_fonts/font = ExtResource("5_8dnf8")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8dnf8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a13el")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g8xfv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vnfpr")
+text = "Main Menu"
+
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=890935899]
 stream = ExtResource("13_jaika")
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="1s" to="." method="_on_s_timeout"]
 [connection signal="timeout" from="general" to="." method="_on_general_timeout"]
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="pressed" from="Node/insulin" to="." method="_on_insulin_button"]
 [connection signal="pressed" from="Node/glucagon" to="." method="_on_glucagon_button"]
+[connection signal="pressed" from="but" to="." method="_on_menu_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dvdipe7pqjjw8"]
 
 [ext_resource type="Script" uid="uid://dcmratvqh24v8" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://defthij8apig1" path="res://assets/images.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://dvlddqrjly26o" path="res://assets/Hormones_and_Endocrine_Function_1796x943.png" id="2_8ln24"]
 [ext_resource type="Texture2D" uid="uid://b1ppcwviajdrt" path="res://assets/images__1_-removebg-preview.png" id="3_wu84c"]
 [ext_resource type="Texture2D" uid="uid://ba0cskreefmgv" path="res://assets/images__2_-removebg-preview.png" id="4_wu84c"]
 [ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="5_8ln24"]
@@ -51,9 +51,9 @@ script = ExtResource("1_l6cm7")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1692501070]
 
 [node name="Images" type="Sprite2D" parent="CanvasLayer" unique_id=839491991]
-position = Vector2(570.23456, 330)
-scale = Vector2(2.0432096, 2.04321)
-texture = ExtResource("2_bqqt6")
+position = Vector2(601.67035, 328.9533)
+scale = Vector2(0.70635533, 0.7063556)
+texture = ExtResource("2_8ln24")
 
 [node name="main" type="Control" parent="CanvasLayer" unique_id=879933139]
 layout_mode = 3

@@ -14,6 +14,21 @@ extends Node2D
 
 var insulin_scripts = preload("res://scripts/pancreas_insulin.gd")
 var glucagon_scripts = preload("res://scripts/pancreas_insulin.gd")
+
+var click = preload("res://audio/click.wav")
+var lose = preload("res://audio/sudden.mp3")
+var sec = preload("res://audio/message.mp3")
+
+
+func play_sound(sound):
+	var temp = AudioStreamPlayer.new()
+	temp.stream = sound
+	add_child(temp)
+	
+	temp.finished.connect(temp.queue_free)
+	temp.play()
+	
+
 #var bg_music = preload("res://audio/fluid.mp3")
 
 
@@ -56,7 +71,7 @@ var actions = [
 
 func _ready() -> void:
 	glucose_change(0, 1)
-	music.play()
+	#music.play()
 	#print(global.scores)[[[[[
 	await get_tree().create_timer(5).timeout
 	
@@ -80,6 +95,12 @@ func _on_s_timeout() -> void:
 	else:
 		line_glucose.add_theme_color_override("font_color", global.extreme)
 	
+		
+	if glucose_level < 40:
+		death()
+	if glucose_level > 300:
+		death()
+	
 	if alive:
 		if score < 0:
 			score = 0
@@ -93,8 +114,10 @@ func _on_s_timeout() -> void:
 			score += 1
 		elif glucose_level != 0:
 			score -= 3
-	$Node/score.text = "Score: " + str(score)
-		
+			
+	if score < 0:
+			score = 0
+	$score.text = "Score: " + str(score)
 		
 
 #
@@ -120,13 +143,21 @@ func death():
 	print("You're dead")
 	b1.disabled = 1
 	b2.disabled = 1 
-	
+	$"1s".stop()
+	$cooldown.stop()
+	$general.stop()
+	$music.stop()
+	$Node/status.visible = 0
+	$bg.visible = 1
+	$but.visible = 1
 	
 	alive = 0
 	#global.scores[1] = ["pancreas", score/60]
 	global.update_scores("pancreas", score)
 	
 	print(global.scores)
+	play_sound(lose)
+	
 	#global.save_scores()
 
 func run():
@@ -168,13 +199,10 @@ func glucose_change(x,s):
 		glucose_level += temp * s
 		#label_glucose.text = "Glucose level: " + str(glucose_level)
 		await get_tree().create_timer(1).timeout
-	
-	if glucose_level < 40:
-		death()
-	if glucose_level > 300:
-		death()
+
 
 func _on_insulin_button() -> void:
+	play_sound(click)
 	cooldown.start()
 	b1.disabled = 1
 	b2.disabled = 1
@@ -187,16 +215,19 @@ func _on_insulin_button() -> void:
 		insulin.position = Vector2(69, 49)
 		insulin.set_script(insulin_scripts)
 		hormones.add_child(insulin)
+		play_sound(sec)
 		await get_tree().create_timer(0.2).timeout
 
 	
 	print(hormones)
 	
 	
-	glucose_change(8, -1)
+	glucose_change(80, -1)
 
 
 func _on_glucagon_button() -> void:
+	play_sound(click)
+	
 	cooldown.start()
 	b1.disabled = 1
 	b2.disabled = 1
@@ -208,6 +239,8 @@ func _on_glucagon_button() -> void:
 		glucagon.position = Vector2(69, 49)
 		glucagon.set_script(glucagon_scripts)
 		hormones.add_child(glucagon)
+		play_sound(sec)
+		
 		await get_tree().create_timer(0.2).timeout
 		
 		
@@ -223,3 +256,8 @@ func _on_cooldown_timeout() -> void:
 func _on_general_timeout() -> void:
 	if waiting_time > 4:
 		waiting_time -= 1
+
+
+func _on_menu_pressed() -> void:
+	play_sound(click)
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
