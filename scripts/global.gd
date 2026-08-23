@@ -1,5 +1,11 @@
 extends Node
 
+
+var extreme = Color(0x89000cff)
+var medium = Color(0xd1ff00ff)
+var perfect = Color(0x2ebc00ff)
+
+
 var scores = {
 	"thyroid": 0,
 	"pancreas": 0,

@@ -31,9 +31,7 @@ var dif = 1
 var extreme_count = 0
 var extreme_time = 0
 
-var extreme = Color(0x89000cff)
-var medium = Color(0xd1ff00ff)
-var perfect = Color(0x2ebc00ff)
+
 
 var glucose = 85
 var calcium = 95.0
@@ -102,93 +100,93 @@ func _on_s_timeout() -> void:
 	label_bmr.text = str(bmr) + " %"
 	
 	if glucose < 60:
-		line_glucose.add_theme_color_override("font_color", extreme)
+		line_glucose.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 	elif glucose < 70:
-		line_glucose.add_theme_color_override("font_color", medium)
+		line_glucose.add_theme_color_override("font_color", global.medium)
 		
 	elif glucose < 110:
-		line_glucose.add_theme_color_override("font_color", perfect)
+		line_glucose.add_theme_color_override("font_color", global.perfect)
 		
 	elif glucose < 140:
-		line_glucose.add_theme_color_override("font_color", medium)
+		line_glucose.add_theme_color_override("font_color", global.medium)
 	else:
-		line_glucose.add_theme_color_override("font_color", extreme)
+		line_glucose.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 		
 
 	if calcium < 70:
-		line_calcium.add_theme_color_override("font_color", extreme)
+		line_calcium.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 		
 	elif calcium < 80:
-		line_calcium.add_theme_color_override("font_color", medium)
+		line_calcium.add_theme_color_override("font_color", global.medium)
 	elif calcium < 105:
-		line_calcium.add_theme_color_override("font_color", perfect)
+		line_calcium.add_theme_color_override("font_color", global.perfect)
 	elif calcium < 115:
-		line_calcium.add_theme_color_override("font_color", medium)
+		line_calcium.add_theme_color_override("font_color", global.medium)
 	else:
-		line_calcium.add_theme_color_override("font_color", extreme)
+		line_calcium.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 		
 
 	if water < 80:
-		line_water.add_theme_color_override("font_color", extreme)
+		line_water.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 		
 	elif water < 90:
-		line_water.add_theme_color_override("font_color", medium)
+		line_water.add_theme_color_override("font_color", global.medium)
 	elif water < 110:
-		line_water.add_theme_color_override("font_color", perfect)
+		line_water.add_theme_color_override("font_color", global.perfect)
 	elif water < 120:
-		line_water.add_theme_color_override("font_color", medium)
+		line_water.add_theme_color_override("font_color", global.medium)
 	else:
-		line_water.add_theme_color_override("font_color", extreme)
+		line_water.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 		
 		
 	if hr < 50:
-		line_hr.add_theme_color_override("font_color", extreme)
+		line_hr.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 		
 	elif hr < 60:
-		line_hr.add_theme_color_override("font_color", medium)
+		line_hr.add_theme_color_override("font_color", global.medium)
 	elif hr < 100:
-		line_hr.add_theme_color_override("font_color", perfect)
+		line_hr.add_theme_color_override("font_color", global.perfect)
 	elif hr < 120:
-		line_hr.add_theme_color_override("font_color", medium)
+		line_hr.add_theme_color_override("font_color", global.medium)
 	else:
-		line_hr.add_theme_color_override("font_color", extreme)
+		line_hr.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 		
 		
 	if bp < 90:
-		line_bp.add_theme_color_override("font_color", extreme)
+		line_bp.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 		
 	elif bp < 100:
-		line_bp.add_theme_color_override("font_color", medium)
+		line_bp.add_theme_color_override("font_color", global.medium)
 	elif bp < 130:
-		line_bp.add_theme_color_override("font_color", perfect)
+		line_bp.add_theme_color_override("font_color", global.perfect)
 	elif bp < 140:
-		line_bp.add_theme_color_override("font_color", medium)
+		line_bp.add_theme_color_override("font_color", global.medium)
 	else:
-		line_bp.add_theme_color_override("font_color", extreme)
+		line_bp.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 		
 		
 	if bmr < 80:
-		line_bmr.add_theme_color_override("font_color", extreme)
+		line_bmr.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 		
 	elif bmr < 90:
-		line_bmr.add_theme_color_override("font_color", medium)
+		line_bmr.add_theme_color_override("font_color", global.medium)
 	elif bmr < 110:
-		line_bmr.add_theme_color_override("font_color", perfect)
+		line_bmr.add_theme_color_override("font_color", global.perfect)
 	elif bmr < 120:
-		line_bmr.add_theme_color_override("font_color", medium)
+		line_bmr.add_theme_color_override("font_color", global.medium)
 	else:
-		line_bmr.add_theme_color_override("font_color", extreme)
+		line_bmr.add_theme_color_override("font_color", global.extreme)
 		extreme_count += 1
 	
 	#print (extreme_time)

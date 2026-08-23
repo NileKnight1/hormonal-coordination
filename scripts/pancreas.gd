@@ -1,13 +1,16 @@
 extends Node2D
 
 
-@onready var glucose_level_label = $Node/glucose_level
+#@onready var glucose_level_label = $Node/glucose_level
 @onready var status = $Node/status
 @onready var cooldown = $cooldown
 @onready var b1 = $Node/insulin
 @onready var b2 = $Node/glucagon
 @onready var hormones = $hormones
 @onready var music = $music
+@onready var line_glucose = $Node/Control/Label3
+@onready var label_glucose = $Node/Control/Label2
+
 
 var insulin_scripts = preload("res://scripts/pancreas_insulin.gd")
 var glucagon_scripts = preload("res://scripts/pancreas_insulin.gd")
@@ -60,11 +63,26 @@ func _ready() -> void:
 	
 	run()
 
-func _process(delta: float) -> void:
+func _on_s_timeout() -> void:
+	
+	$Node/Control/Label2.text = str(glucose_level) + " mg"
+	
+	if glucose_level < 60:
+		line_glucose.add_theme_color_override("font_color", global.extreme)
+	elif glucose_level < 70:
+		line_glucose.add_theme_color_override("font_color", global.medium)
+		
+	elif glucose_level < 110:
+		line_glucose.add_theme_color_override("font_color", global.perfect)
+		
+	elif glucose_level < 140:
+		line_glucose.add_theme_color_override("font_color", global.medium)
+	else:
+		line_glucose.add_theme_color_override("font_color", global.extreme)
 	
 	if alive:
-		if score < 0: 
-			return
+		if score < 0:
+			score = 0
 		elif glucose_level < 60:
 			score -= 3
 		elif glucose_level < 70:
@@ -73,11 +91,31 @@ func _process(delta: float) -> void:
 			score += 2
 		elif glucose_level < 140:
 			score += 1
-		else:
+		elif glucose_level != 0:
 			score -= 3
-			
-	$Node/score.text = "Score: " + str(score/60)
-	
+	$Node/score.text = "Score: " + str(score)
+		
+		
+
+#
+#func _process(delta: float) -> void:
+	#
+	#if alive:
+		#if score < 0: 
+			#return
+		#elif glucose_level < 60:
+			#score -= 3
+		#elif glucose_level < 70:
+			#score += 1
+		#elif glucose_level < 110:
+			#score += 2
+		#elif glucose_level < 140:
+			#score += 1
+		#else:
+			#score -= 3
+			#
+	#$Node/score.text = "Score: " + str(score/60)
+	#
 func death():
 	print("You're dead")
 	b1.disabled = 1
@@ -86,7 +124,7 @@ func death():
 	
 	alive = 0
 	#global.scores[1] = ["pancreas", score/60]
-	global.update_scores("pancreas", score/60)
+	global.update_scores("pancreas", score)
 	
 	print(global.scores)
 	#global.save_scores()
@@ -128,7 +166,7 @@ func glucose_change(x,s):
 		#print(temp)
 		
 		glucose_level += temp * s
-		glucose_level_label.text = "Glucose level: " + str(glucose_level)
+		#label_glucose.text = "Glucose level: " + str(glucose_level)
 		await get_tree().create_timer(1).timeout
 	
 	if glucose_level < 40:
