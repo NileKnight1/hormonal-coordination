@@ -178,7 +178,7 @@ func _on_calcitonin_button_down() -> void:
 	cooldown.start()
 	b1.disabled = 1
 	b2.disabled = 1
-	change_calcium(20, -1)
+	change_calcium(2, -1)
 
 func _on_parathormone_button_down() -> void:
 	play_sound(click)

@@ -223,7 +223,7 @@ func _on_insulin_button() -> void:
 	print(hormones)
 	
 	
-	glucose_change(80, -1)
+	glucose_change(8, -1)
 
 
 func _on_glucagon_button() -> void:

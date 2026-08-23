@@ -3,9 +3,21 @@
 [ext_resource type="Script" uid="uid://borl85q5mlcw5" path="res://scripts/adrenal.gd" id="1_855ow"]
 [ext_resource type="Texture2D" uid="uid://bj5phtvuyvlfg" path="res://assets/201405_adrenal_medulla.png" id="1_uad51"]
 [ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="3_8apxs"]
+[ext_resource type="AudioStream" uid="uid://bcr0ooramemnx" path="res://audio/fluid.mp3" id="4_47jjj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8apxs"]
 bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47jjj"]
+bg_color = Color(0, 0, 0, 0.7058824)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8apxs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47jjj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7g4nv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdwxv"]
 
 [node name="Node2D" type="Node2D" unique_id=652613790]
 script = ExtResource("1_855ow")
@@ -17,8 +29,8 @@ autostart = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1549937560]
 
 [node name="201405AdrenalMedulla" type="Sprite2D" parent="." unique_id=1746344252]
-position = Vector2(94.999985, -216)
-scale = Vector2(0.5875, 0.5875)
+position = Vector2(-9.000004, -160)
+scale = Vector2(0.73375, 0.73375)
 texture = ExtResource("1_uad51")
 
 [node name="Control" type="Control" parent="." unique_id=1210706525]
@@ -82,39 +94,27 @@ scale = Vector2(0.34000003, 0.34000003)
 theme_override_font_sizes/font_size = 80
 text = "Digestion: ON"
 
-[node name="event" type="Label" parent="Control" unique_id=693938265]
+[node name="event" type="Label" parent="Control" unique_id=701456269]
 layout_mode = 0
-offset_left = -549.0
-offset_top = 240.0
-offset_right = 535.4829
-offset_bottom = 386.0
-scale = Vector2(0.4599988, 0.4599988)
+offset_left = -542.0
+offset_top = 213.0
+offset_right = 498.0
+offset_bottom = 384.0
+scale = Vector2(0.475, 0.475)
 theme_override_fonts/font = ExtResource("3_8apxs")
-theme_override_font_sizes/font_size = 118
-text = "Nothing right now"
+theme_override_font_sizes/font_size = 125
+text = "Player is nothing."
 
-[node name="score" type="Label" parent="Control" unique_id=2099224922]
+[node name="health" type="Label" parent="Control" unique_id=2102242111]
 layout_mode = 0
-offset_left = 201.99998
-offset_top = -286.0
-offset_right = 646.0
-offset_bottom = -96.0
-scale = Vector2(0.115, 0.115)
+offset_left = -539.0
+offset_top = -290.00003
+offset_right = 2175.0
+offset_bottom = 553.0
+scale = Vector2(0.12, 0.12)
 theme_override_fonts/font = ExtResource("3_8apxs")
-theme_override_font_sizes/font_size = 633
-text = "Score: 0"
-
-[node name="health" type="Label" parent="Control" unique_id=1243171675]
-layout_mode = 0
-offset_left = 207.0
-offset_top = -203.0
-offset_right = 705.0
-offset_bottom = -13.0
-scale = Vector2(0.11, 0.11)
-theme_override_fonts/font = ExtResource("3_8apxs")
-theme_override_font_sizes/font_size = 629
+theme_override_font_sizes/font_size = 684
 text = "Health: 3"
-vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="." unique_id=1590552765]
 z_index = -1
@@ -126,5 +126,44 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8apxs")
 metadata/_edit_lock_ = true
 
+[node name="bg" type="Panel" parent="." unique_id=1614006409]
+visible = false
+offset_left = -584.0
+offset_top = -329.99997
+offset_right = 596.0
+offset_bottom = 333.00003
+theme_override_styles/panel = SubResource("StyleBoxFlat_47jjj")
+
+[node name="score" type="Label" parent="." unique_id=1157729923]
+offset_left = 211.0
+offset_top = -293.0
+offset_right = 2497.0
+offset_bottom = 517.0
+scale = Vector2(0.13, 0.13)
+theme_override_fonts/font = ExtResource("3_8apxs")
+theme_override_font_sizes/font_size = 657
+text = "Score: 0"
+
+[node name="but" type="Button" parent="." unique_id=1206744461]
+visible = false
+offset_left = -550.0
+offset_top = 226.0
+offset_right = -245.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.7479036, 0.32087067, 0.52911603, 1)
+theme_override_fonts/font = ExtResource("3_8apxs")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8apxs")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_47jjj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7g4nv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kdwxv")
+text = "Main Menu"
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=451365262]
+stream = ExtResource("4_47jjj")
+autoplay = true
+parameters/looping = true
+
 [connection signal="timeout" from="general" to="." method="_on_general_timeout"]
 [connection signal="button_down" from="Control/adrenaline" to="." method="_on_adrenaline_button_down"]
+[connection signal="pressed" from="but" to="." method="_on_but_pressed"]

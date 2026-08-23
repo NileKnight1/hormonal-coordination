@@ -7,9 +7,24 @@ var cur_event
 @onready var adrenaline =$Control/adrenaline
 @onready var general = $general
 
-var alive = 1
+var click = preload("res://audio/click.wav")
+var lose = preload("res://audio/sudden.mp3")
+var right = preload("res://audio/right.mp3")
+var wrong = preload("res://audio/wrong.mp3")
+
+
+func play_sound(sound):
+	var temp = AudioStreamPlayer.new()
+	temp.stream = sound
+	add_child(temp)
+	
+	temp.finished.connect(temp.queue_free)
+	temp.play()
+	
+
+var alive = 3
 var score = 0
-var health = 3
+var health = 1
 var waiting_time = 5
 
 var glucose_level = 85
@@ -63,7 +78,13 @@ func change():
 
 func death():
 	print("You're dead.")
+	play_sound(lose)
 	alive = 0
+	$but.visible = 1
+	$bg.visible = 1
+	$general.stop()
+	$music.stop()
+	
 	#global.scores[2] = ["adrenal", score]
 	
 	global.update_scores("adrenal", score)
@@ -77,6 +98,7 @@ func failure():
 
 func _on_adrenaline_button_down() -> void:
 	change()
+	play_sound(click)
 
 
 func run():
@@ -117,23 +139,39 @@ func run():
 			0:
 				if digestion:
 					score += 3;
+					play_sound(right)
 				else:
 					health -= 1;
+					play_sound(wrong)
+					
 			1:
 				if digestion:
 					score += 1
+					play_sound(right)
+					
 				else:
 					score -= 1
+					play_sound(wrong)
+					
 			2:
 				if !digestion:
 					score += 1
+					play_sound(right)
+					
 				else:
 					score -= 1
+					play_sound(wrong)
+					
 			3:
 				if !digestion:
 					score += 3
+					play_sound(right)
+					
 				else: 
 					health -= 1
+					play_sound(wrong)
+
+
 		if score < 0:
 			score = 0
 		#match tempx:
@@ -154,7 +192,7 @@ func run():
 			death()
 			
 		print(score)
-		$Control/score.text = "Score: " + str(score)
+		$score.text = "Score: " + str(score)
 		$Control/health.text = "Health: " + str(health)
 		
 		
@@ -173,3 +211,8 @@ func _on_general_timeout() -> void:
 	if waiting_time > 1:
 		waiting_time -= 1
 	
+
+
+func _on_but_pressed() -> void:
+	play_sound(click)
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

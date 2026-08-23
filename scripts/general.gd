@@ -25,9 +25,26 @@ extends Node2D
 @onready var msg_label = $CanvasLayer/Label4
 @onready var time_label = $CanvasLayer/Label5
 
+
+var click = preload("res://audio/click.wav")
+var lose = preload("res://audio/sudden.mp3")
+var right = preload("res://audio/right.mp3")
+var wrong = preload("res://audio/wrong.mp3")
+
+var alive = 1
+
+func play_sound(sound):
+	var temp = AudioStreamPlayer.new()
+	temp.stream = sound
+	add_child(temp)
+	
+	temp.finished.connect(temp.queue_free)
+	temp.play()
+	
+
 var elapsed_time = 0
 
-var dif = 1
+var dif = 3
 var extreme_count = 0
 var extreme_time = 0
 
@@ -197,7 +214,7 @@ func _on_s_timeout() -> void:
 		extreme_time = 0
 	
 	if extreme_time > 4:
-		end_game()
+		death()
 	
 	elapsed_time += 1
 	var mins = elapsed_time / 60
@@ -299,7 +316,7 @@ func show_msg(msg):
 
 func run():
 	
-	while 1:
+	while alive:
 		var tempx = randi_range(0, len(events)-1)
 		event(events[tempx])
 		await get_tree().create_timer(5).timeout
@@ -314,6 +331,19 @@ func event(event):
 	bp += event[5]
 	bmr += event[6]
 	
-func end_game():
+func death():
+	alive = 0
 	print("dead")
+	play_sound(lose)
 	global.update_scores("general", elapsed_time)
+	$music.stop()
+	$"1s".stop()
+
+	
+	$CanvasLayer/bg2.visible = 1
+	$CanvasLayer/but.visible = 1
+	
+
+func _on_but_pressed() -> void:
+	play_sound(click)
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

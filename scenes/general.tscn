@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://dx50c8gvrn7r3" path="res://assets/glucagon4buttonmax.png" id="36_ktl3u"]
 [ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="37_0txqb"]
 [ext_resource type="Texture2D" uid="uid://by2hhul8n31tw" path="res://assets/949-9494109_brush-stroke.png" id="38_ra22a"]
+[ext_resource type="AudioStream" uid="uid://bcr0ooramemnx" path="res://audio/fluid.mp3" id="39_a5yvw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbogg"]
 bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
@@ -47,6 +48,17 @@ bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w80bm"]
 bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuum8"]
+bg_color = Color(0, 0, 0, 0.7058824)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcdas"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7g7g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kajyh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v2ajq"]
 
 [node name="Node2D" type="Node2D" unique_id=947484268]
 script = ExtResource("1_8jc6d")
@@ -554,6 +566,34 @@ horizontal_alignment = 1
 autowrap_mode = 2
 justification_flags = 171
 
+[node name="bg2" type="Panel" parent="CanvasLayer" unique_id=1305390338]
+visible = false
+offset_left = -14.0
+offset_top = -4.0
+offset_right = 1166.0
+offset_bottom = 659.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xuum8")
+
+[node name="but" type="Button" parent="CanvasLayer" unique_id=2010431398]
+visible = false
+offset_left = 20.0
+offset_top = 552.0
+offset_right = 325.0
+offset_bottom = 631.0
+theme_override_colors/font_color = Color(0.7479036, 0.32087067, 0.52911603, 1)
+theme_override_fonts/font = ExtResource("37_0txqb")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gcdas")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a7g7g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kajyh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v2ajq")
+text = "Main Menu"
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1762033079]
+stream = ExtResource("39_a5yvw")
+autoplay = true
+parameters/looping = true
+
 [connection signal="timeout" from="1s" to="." method="_on_s_timeout"]
 [connection signal="pressed" from="pituitray/Control/tsh" to="." method="_on_tsh_pressed"]
 [connection signal="pressed" from="pituitray/Control/acth" to="." method="_on_acth_pressed"]
@@ -568,3 +608,4 @@ justification_flags = 171
 [connection signal="pressed" from="Button2" to="." method="_on_button2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button4_pressed"]
+[connection signal="pressed" from="CanvasLayer/but" to="." method="_on_but_pressed"]
