@@ -102,7 +102,14 @@ func _on_tut_pressed() -> void:
 	print(choosen)
 	if choosen == "res://scenes/pancreas.tscn":
 		$CanvasLayer/tutorials/pancreas.visible = 1
-
+	if choosen == "res://scenes/thyroid.tscn":
+		$CanvasLayer/tutorials/thyroid.visible = 1
+	if choosen == "res://scenes/adrenal.tscn":
+		$CanvasLayer/tutorials/adrenal.visible = 1
+	if choosen == "res://scenes/pituitary.tscn":
+		$CanvasLayer/tutorials/pituitary.visible = 1
+	if choosen == "res://scenes/general.tscn":
+		$CanvasLayer/tutorials/general.visible = 1
 
 func _on_play_pressed() -> void:
 	play_sound(click)

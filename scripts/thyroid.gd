@@ -56,7 +56,7 @@ func change_calcium(x, s):
 	
 	print("Ca end " + str(calcium_level))
 	
-	if calcium_level < 70:
+	if calcium_level < 60:
 		death()
 	if calcium_level > 125:
 		death()
@@ -93,7 +93,7 @@ func _process(delta: float) -> void:
 		elif calcium_level < 115:
 			score += 1
 		else:
-			score -= 2
+			score -= 3
 			
 		$Control/score.text = "Score: " + str(score/60)
 

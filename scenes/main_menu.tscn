@@ -519,6 +519,562 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_hstxw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8egab")
 text = "Play "
 
+[node name="thyroid" type="Control" parent="CanvasLayer/tutorials" unique_id=50836619]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="title" type="Label" parent="CanvasLayer/tutorials/thyroid" unique_id=2118792284]
+layout_mode = 0
+offset_left = 382.00003
+offset_top = 12.000004
+offset_right = 1225.0
+offset_bottom = 277.0
+scale = Vector2(0.44337946, 0.44337946)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Thyroid"
+horizontal_alignment = 1
+
+[node name="gameplay" type="Label" parent="CanvasLayer/tutorials/thyroid" unique_id=1210129047]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 147.0
+offset_right = 943.0
+offset_bottom = 412.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Gameplay"
+
+[node name="Label3" type="Label" parent="CanvasLayer/tutorials/thyroid" unique_id=874526538]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 206.0
+offset_right = 1707.9856
+offset_bottom = 1985.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "An event happens each some seconds changing \"calcium\" level, either increasing or decreasing it.
+
+You have two hormones to achieve homestasis of calcium, calcitonin decreases the calcium level, while parathormone increases it."
+autowrap_mode = 2
+max_lines_visible = 12
+
+[node name="dif" type="Label" parent="CanvasLayer/tutorials/thyroid" unique_id=1654164687]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 147.0
+offset_right = 1328.0
+offset_bottom = 412.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Difficulty"
+
+[node name="Label5" type="Label" parent="CanvasLayer/tutorials/thyroid" unique_id=2027885564]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 206.0
+offset_right = 2092.9856
+offset_bottom = 689.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "Difficulty increases with time, which decreases time between each event and other."
+autowrap_mode = 2
+
+[node name="scoring" type="Label" parent="CanvasLayer/tutorials/thyroid" unique_id=185186693]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 325.0
+offset_right = 1328.0
+offset_bottom = 590.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Scoring"
+
+[node name="Label9" type="Label" parent="CanvasLayer/tutorials/thyroid" unique_id=1294935262]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 384.0
+offset_right = 2092.9856
+offset_bottom = 1191.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "There are three zones of scoring:
+extreme: -3/sec
+med: +1/sec
+perfect: +2/sec"
+autowrap_mode = 2
+
+[node name="death" type="Label" parent="CanvasLayer/tutorials/thyroid" unique_id=1638207180]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 143.0
+offset_right = 1721.0
+offset_bottom = 408.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Death"
+
+[node name="Label7" type="Label" parent="CanvasLayer/tutorials/thyroid" unique_id=333735693]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 202.0
+offset_right = 2364.5583
+offset_bottom = 685.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "If caclium level reaches 6 or 12.5 you die."
+autowrap_mode = 2
+
+[node name="play" type="Button" parent="CanvasLayer/tutorials/thyroid" unique_id=1503828708]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 540.0
+offset_right = 1084.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.7479036, 0.32087067, 0.52911603, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a8gd2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hstxw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8egab")
+text = "Play "
+
+[node name="adrenal" type="Control" parent="CanvasLayer/tutorials" unique_id=1632605783]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="title" type="Label" parent="CanvasLayer/tutorials/adrenal" unique_id=1547543743]
+layout_mode = 0
+offset_left = 382.00003
+offset_top = 12.000004
+offset_right = 1225.0
+offset_bottom = 277.0
+scale = Vector2(0.44337946, 0.44337946)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Adrenal"
+horizontal_alignment = 1
+
+[node name="gameplay" type="Label" parent="CanvasLayer/tutorials/adrenal" unique_id=2073803852]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 147.0
+offset_right = 943.0
+offset_bottom = 412.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Gameplay"
+
+[node name="Label3" type="Label" parent="CanvasLayer/tutorials/adrenal" unique_id=568184607]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 206.0
+offset_right = 1707.9856
+offset_bottom = 912.0764
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "  An event happens each some seconds, you have the ability whether secrete adrenaline or not."
+autowrap_mode = 2
+max_lines_visible = 12
+
+[node name="dif" type="Label" parent="CanvasLayer/tutorials/adrenal" unique_id=1513127749]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 365.0
+offset_right = 938.0
+offset_bottom = 630.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Difficulty"
+
+[node name="Label5" type="Label" parent="CanvasLayer/tutorials/adrenal" unique_id=655773878]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 424.0
+offset_right = 1702.9856
+offset_bottom = 907.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "  Difficulty increases with time, which decreases time between each event and other."
+autowrap_mode = 2
+
+[node name="scoring" type="Label" parent="CanvasLayer/tutorials/adrenal" unique_id=1767137836]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 144.0
+offset_right = 1328.0
+offset_bottom = 409.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Scoring"
+
+[node name="Label9" type="Label" parent="CanvasLayer/tutorials/adrenal" unique_id=589609328]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 203.0
+offset_right = 2092.9856
+offset_bottom = 1010.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "There are four types of events:
+  1st: extreme ones, gives 3 points if secreted and -1 health if not.
+  2nd: needs adrenaline but not crucial, gives 1 point if secreted and -1 point if not
+  3rd: inverse of the 2nd
+  4th: inverse of the 1st"
+autowrap_mode = 2
+
+[node name="death" type="Label" parent="CanvasLayer/tutorials/adrenal" unique_id=666606591]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 143.0
+offset_right = 1721.0
+offset_bottom = 408.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Death"
+
+[node name="Label7" type="Label" parent="CanvasLayer/tutorials/adrenal" unique_id=516073844]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 202.0
+offset_right = 2364.5583
+offset_bottom = 685.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "  If health reaches 0 you die."
+autowrap_mode = 2
+
+[node name="play" type="Button" parent="CanvasLayer/tutorials/adrenal" unique_id=1025726282]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 540.0
+offset_right = 1084.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.7479036, 0.32087067, 0.52911603, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a8gd2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hstxw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8egab")
+text = "Play "
+
+[node name="pituitary" type="Control" parent="CanvasLayer/tutorials" unique_id=1431028647]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="title" type="Label" parent="CanvasLayer/tutorials/pituitary" unique_id=1179130681]
+layout_mode = 0
+offset_left = 382.00003
+offset_top = 12.000004
+offset_right = 1225.0
+offset_bottom = 277.0
+scale = Vector2(0.44337946, 0.44337946)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Pituitary"
+horizontal_alignment = 1
+
+[node name="gameplay" type="Label" parent="CanvasLayer/tutorials/pituitary" unique_id=1712483919]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 147.0
+offset_right = 943.0
+offset_bottom = 412.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Gameplay"
+
+[node name="Label3" type="Label" parent="CanvasLayer/tutorials/pituitary" unique_id=1607015470]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 206.0
+offset_right = 1707.9856
+offset_bottom = 912.0764
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "  An event happens each some seconds, you have to guess which hormone is the right one between the 4 ones."
+autowrap_mode = 2
+max_lines_visible = 12
+
+[node name="dif" type="Label" parent="CanvasLayer/tutorials/pituitary" unique_id=1623759807]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 365.0
+offset_right = 938.0
+offset_bottom = 630.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Difficulty"
+
+[node name="Label5" type="Label" parent="CanvasLayer/tutorials/pituitary" unique_id=527335826]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 424.0
+offset_right = 1702.9856
+offset_bottom = 907.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "  Difficulty increases with time, which decreases time between each event and other."
+autowrap_mode = 2
+
+[node name="scoring" type="Label" parent="CanvasLayer/tutorials/pituitary" unique_id=1360387966]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 144.0
+offset_right = 1328.0
+offset_bottom = 409.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Scoring"
+
+[node name="Label9" type="Label" parent="CanvasLayer/tutorials/pituitary" unique_id=355582654]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 203.0
+offset_right = 2092.9856
+offset_bottom = 1010.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "-1 health: if you don't choose or choose a wrong one.
++3 points: if you choose correct very fast.
++2 points: if you choose correct fast without very.
++1 point: if you choose correct at last seconds."
+autowrap_mode = 2
+
+[node name="death" type="Label" parent="CanvasLayer/tutorials/pituitary" unique_id=1616765910]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 143.0
+offset_right = 1721.0
+offset_bottom = 408.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Death"
+
+[node name="Label7" type="Label" parent="CanvasLayer/tutorials/pituitary" unique_id=355797073]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 202.0
+offset_right = 2364.5583
+offset_bottom = 685.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "  If health reaches 0 you die."
+autowrap_mode = 2
+
+[node name="play" type="Button" parent="CanvasLayer/tutorials/pituitary" unique_id=832609957]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 540.0
+offset_right = 1084.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.7479036, 0.32087067, 0.52911603, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a8gd2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hstxw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8egab")
+text = "Play "
+
+[node name="general" type="Control" parent="CanvasLayer/tutorials" unique_id=1696931666]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="title" type="Label" parent="CanvasLayer/tutorials/general" unique_id=1864752482]
+layout_mode = 0
+offset_left = 382.00003
+offset_top = 12.000004
+offset_right = 1225.0
+offset_bottom = 277.0
+scale = Vector2(0.44337946, 0.44337946)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "General"
+horizontal_alignment = 1
+
+[node name="gameplay" type="Label" parent="CanvasLayer/tutorials/general" unique_id=135033144]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 147.0
+offset_right = 943.0
+offset_bottom = 412.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Gameplay"
+
+[node name="Label3" type="Label" parent="CanvasLayer/tutorials/general" unique_id=1367537731]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 206.0
+offset_right = 1707.9856
+offset_bottom = 912.0764
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "  An event happens each some seconds, it affect some values of 6 stats, glucose, calcium, water levels and heart rate, blood pressure and BMR."
+autowrap_mode = 2
+max_lines_visible = 12
+
+[node name="dif" type="Label" parent="CanvasLayer/tutorials/general" unique_id=18001096]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 398.0
+offset_right = 938.0
+offset_bottom = 663.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Difficulty"
+
+[node name="Label5" type="Label" parent="CanvasLayer/tutorials/general" unique_id=2015346796]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 457.0
+offset_right = 1702.9856
+offset_bottom = 940.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "  Difficulty increases with time, which decreases time between each event and other."
+autowrap_mode = 2
+
+[node name="scoring" type="Label" parent="CanvasLayer/tutorials/general" unique_id=997681371]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 144.0
+offset_right = 1328.0
+offset_bottom = 409.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Scoring"
+
+[node name="Label9" type="Label" parent="CanvasLayer/tutorials/general" unique_id=1132727045]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 203.0
+offset_right = 2092.9856
+offset_bottom = 670.7194
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "  It's simple here, just  elapsed time.
+  Medium: time is doubled.
+  Hard: time is tripled."
+autowrap_mode = 2
+
+[node name="death" type="Label" parent="CanvasLayer/tutorials/general" unique_id=664659467]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 143.0
+offset_right = 1721.0
+offset_bottom = 408.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(0.7294118, 0.75686276, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 214
+text = "Death"
+
+[node name="Label7" type="Label" parent="CanvasLayer/tutorials/general" unique_id=255345575]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 202.0
+offset_right = 2364.5583
+offset_bottom = 685.0
+scale = Vector2(0.22235553, 0.22235553)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 128
+text = "  Easy: if 3 values reach extreme, you die.
+  Medium: if 2 values reach extreme, you die.
+ Hard: if 1 value reaches extreme you die."
+autowrap_mode = 2
+
+[node name="play" type="Button" parent="CanvasLayer/tutorials/general" unique_id=568889012]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 540.0
+offset_right = 1084.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.7479036, 0.32087067, 0.52911603, 1)
+theme_override_fonts/font = ExtResource("5_8ln24")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a8gd2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hstxw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8egab")
+text = "Play "
+
 [connection signal="button_down" from="CanvasLayer/main/glands_" to="." method="_on_glands_button_down"]
 [connection signal="button_down" from="CanvasLayer/main/glands_2" to="." method="_on_scores_button_down"]
 [connection signal="button_down" from="CanvasLayer/glands/pancreas" to="." method="_on_pancreas_button_down"]
@@ -530,3 +1086,7 @@ text = "Play "
 [connection signal="pressed" from="CanvasLayer/scores/back" to="." method="_on_back_button_down"]
 [connection signal="pressed" from="CanvasLayer/tut" to="." method="_on_tut_pressed"]
 [connection signal="pressed" from="CanvasLayer/tutorials/pancreas/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/tutorials/thyroid/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/tutorials/adrenal/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/tutorials/pituitary/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/tutorials/general/play" to="." method="_on_play_pressed"]

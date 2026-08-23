@@ -72,9 +72,9 @@ texture_disabled = ExtResource("10_6jh1j")
 
 [node name="adh" type="TextureButton" parent="Control" unique_id=1627542681]
 layout_mode = 0
-offset_left = 299.0
+offset_left = 295.0
 offset_top = 47.000004
-offset_right = 2093.0
+offset_right = 2089.0
 offset_bottom = 612.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("11_3mpay")
@@ -107,10 +107,10 @@ text = "Player is nothing."
 
 [node name="score" type="Label" parent="Control" unique_id=171414759]
 layout_mode = 0
-offset_left = 158.0
-offset_top = -309.0
-offset_right = 2444.0
-offset_bottom = 501.0
+offset_left = 211.0
+offset_top = -293.0
+offset_right = 2497.0
+offset_bottom = 517.0
 scale = Vector2(0.13, 0.13)
 theme_override_fonts/font = ExtResource("3_tqf48")
 theme_override_font_sizes/font_size = 657
@@ -119,9 +119,9 @@ text = "Score: 0"
 [node name="health" type="Label" parent="Control" unique_id=663227270]
 layout_mode = 0
 offset_left = -539.0
-offset_top = -294.0
-offset_right = 187.0
-offset_bottom = -48.0
+offset_top = -290.00003
+offset_right = 2175.0
+offset_bottom = 553.0
 scale = Vector2(0.12, 0.12)
 theme_override_fonts/font = ExtResource("3_tqf48")
 theme_override_font_sizes/font_size = 684

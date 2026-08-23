@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bj5phtvuyvlfg" path="res://assets/201405_adrenal_medulla.png" id="1_uad51"]
 [ext_resource type="FontFile" uid="uid://dv5ck4njci6f6" path="res://assets/Signika-Bold.ttf" id="3_8apxs"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8apxs"]
+bg_color = Color(0.18576995, 0.00057644997, 0.016268224, 1)
+
 [node name="Node2D" type="Node2D" unique_id=652613790]
 script = ExtResource("1_855ow")
 
@@ -112,6 +115,16 @@ theme_override_fonts/font = ExtResource("3_8apxs")
 theme_override_font_sizes/font_size = 629
 text = "Health: 3"
 vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1590552765]
+z_index = -1
+offset_left = -574.0
+offset_top = -330.0
+offset_right = 579.0
+offset_bottom = 326.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8apxs")
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="general" to="." method="_on_general_timeout"]
 [connection signal="button_down" from="Control/adrenaline" to="." method="_on_adrenaline_button_down"]
