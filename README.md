@@ -62,3 +62,4 @@ Hard: if 1 value reaches extreme you die.
 Some (or most) art of the game was done by me.
 
 *Game is available on itch.io playble on any browser.*
+https://nileknight.itch.io/hormonal-coordination
