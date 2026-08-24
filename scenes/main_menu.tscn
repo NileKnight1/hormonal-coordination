@@ -56,6 +56,7 @@ scale = Vector2(0.70635533, 0.7063556)
 texture = ExtResource("2_8ln24")
 
 [node name="main" type="Control" parent="CanvasLayer" unique_id=879933139]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 
@@ -102,7 +103,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_rtw2f")
 text = "Highes Scores"
 
 [node name="glands" type="Control" parent="CanvasLayer" unique_id=1669411007]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 
@@ -209,6 +209,49 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_tbmy8")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_jk1qb")
 text = "General
 "
+
+[node name="easy" type="Button" parent="CanvasLayer/glands" unique_id=1210542283]
+layout_mode = 0
+offset_left = 757.00006
+offset_top = 409.00003
+offset_right = 906.00006
+offset_bottom = 504.00003
+scale = Vector2(0.58, 0.58)
+theme_override_colors/font_hover_color = Color(0.48142892, 0.383729, 0.43473414, 1)
+theme_override_font_sizes/font_size = 69
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jk1qb")
+text = "Easy
+"
+
+[node name="easy2" type="Button" parent="CanvasLayer/glands" unique_id=269421934]
+layout_mode = 0
+offset_left = 862.00006
+offset_top = 409.00003
+offset_right = 1011.00006
+offset_bottom = 504.00003
+scale = Vector2(0.58, 0.58)
+theme_override_colors/font_hover_color = Color(0.48142892, 0.383729, 0.43473414, 1)
+theme_override_font_sizes/font_size = 69
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jk1qb")
+text = "Med"
+
+[node name="easy3" type="Button" parent="CanvasLayer/glands" unique_id=607260126]
+layout_mode = 0
+offset_left = 970.99994
+offset_top = 409.00003
+offset_right = 1120.0
+offset_bottom = 504.00003
+scale = Vector2(0.58, 0.58)
+theme_override_colors/font_hover_color = Color(0.48142892, 0.383729, 0.43473414, 1)
+theme_override_font_sizes/font_size = 69
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jk1qb")
+text = "Hard"
 
 [node name="back" type="Button" parent="CanvasLayer/glands" unique_id=1679700425]
 layout_mode = 0
@@ -1082,6 +1125,9 @@ text = "Play "
 [connection signal="button_down" from="CanvasLayer/glands/adrenal" to="." method="_on_adrenal_button_down"]
 [connection signal="button_down" from="CanvasLayer/glands/thyroid" to="." method="_on_thyroid_button_down"]
 [connection signal="button_down" from="CanvasLayer/glands/general" to="." method="_on_general_button_down"]
+[connection signal="pressed" from="CanvasLayer/glands/easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="CanvasLayer/glands/easy2" to="." method="_on_med_pressed"]
+[connection signal="pressed" from="CanvasLayer/glands/easy3" to="." method="_on_hard_pressed"]
 [connection signal="button_down" from="CanvasLayer/glands/back" to="." method="_on_back_button_down"]
 [connection signal="pressed" from="CanvasLayer/scores/back" to="." method="_on_back_button_down"]
 [connection signal="pressed" from="CanvasLayer/tut" to="." method="_on_tut_pressed"]

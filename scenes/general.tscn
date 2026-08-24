@@ -246,7 +246,7 @@ texture_hover = ExtResource("35_4a8al")
 texture_disabled = ExtResource("36_ktl3u")
 stretch_mode = 0
 
-[node name="glucagon2" type="TextureButton" parent="pancreas/Node" unique_id=648324177]
+[node name="adrenaline" type="Button" parent="pancreas/Node" unique_id=622895606]
 layout_mode = 0
 offset_left = 320.0
 offset_top = -81.477264
@@ -254,11 +254,8 @@ offset_right = 2114.0
 offset_bottom = 483.52274
 scale = Vector2(0.1, 0.1)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("33_kajyh")
-texture_pressed = ExtResource("34_v2ajq")
-texture_hover = ExtResource("35_4a8al")
-texture_disabled = ExtResource("36_ktl3u")
-stretch_mode = 0
+theme_override_font_sizes/font_size = 305
+text = "Adrenaline"
 
 [node name="Panel" type="Panel" parent="pancreas" unique_id=1992685420]
 z_index = -1
@@ -603,7 +600,7 @@ parameters/looping = true
 [connection signal="pressed" from="thyroid/Control/parathormone" to="." method="_on_parathormone_pressed"]
 [connection signal="pressed" from="pancreas/Node/insulin" to="." method="_on_insulin_pressed"]
 [connection signal="pressed" from="pancreas/Node/glucagon" to="." method="_on_glucagon_pressed"]
-[connection signal="pressed" from="pancreas/Node/glucagon2" to="." method="_on_adrenaline_pressed"]
+[connection signal="pressed" from="pancreas/Node/adrenaline" to="." method="_on_adrenaline_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button3_pressed"]

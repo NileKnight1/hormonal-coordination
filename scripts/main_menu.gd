@@ -115,3 +115,14 @@ func _on_play_pressed() -> void:
 	play_sound(click)
 	get_tree().change_scene_to_file(choosen)
 	
+
+
+func _on_easy_pressed() -> void:
+	global.dif = 3
+
+
+func _on_med_pressed() -> void:
+	global.dif = 2
+
+func _on_hard_pressed() -> void:
+	global.dif = 1

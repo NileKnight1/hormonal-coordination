@@ -44,7 +44,7 @@ func play_sound(sound):
 
 var elapsed_time = 0
 
-var dif = 3
+var dif = global.dif
 var extreme_count = 0
 var extreme_time = 0
 
@@ -237,15 +237,19 @@ func _on_s_timeout() -> void:
 
 
 func _on_button_pressed() -> void:
+	play_sound(click)
 	cam_pituitary.enabled = 0
 	cam_thyroid.enabled = 1
 func _on_button2_pressed() -> void:
+	play_sound(click)
 	cam_thyroid.enabled = 0
 	cam_pancreas.enabled = 1
 func _on_button3_pressed() -> void:
+	play_sound(click)
 	cam_thyroid.enabled = 1
 	cam_pancreas.enabled = 0
 func _on_button4_pressed() -> void:
+	play_sound(click)
 	cam_pituitary.enabled = 1
 	cam_thyroid.enabled = 0
 	
@@ -265,28 +269,35 @@ func _on_acth_pressed() -> void:
 	#bmr += 2
 
 func _on_gh_pressed() -> void:
+	play_sound(click)
 	glucose += 2
 	water += 1
 	bp += 1
 	bmr += 3
 
 func _on_adh_pressed() -> void:
+	play_sound(click)
 	water += 5
 	bp += 3
 
 func _on_calcitonin_pressed() -> void:
+	play_sound(click)
 	calcium -= 2
 
 func _on_parathormone_pressed() -> void:
+	play_sound(click)
 	calcium += 2
 
 func _on_insulin_pressed() -> void:
+	play_sound(click)
 	glucose -= 8
 
 func _on_glucagon_pressed() -> void:
+	play_sound(click)
 	glucose += 4
 
 func _on_adrenaline_pressed() -> void:
+	play_sound(click)
 	glucose += 8
 	hr += 15
 	bp += 10
@@ -335,7 +346,7 @@ func death():
 	alive = 0
 	print("dead")
 	play_sound(lose)
-	global.update_scores("general", elapsed_time)
+	global.update_scores("general", elapsed_time*(4-dif))
 	$music.stop()
 	$"1s".stop()
 
